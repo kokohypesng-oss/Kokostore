@@ -90,6 +90,8 @@ class BumpaApp {
             pageContent.classList.remove('hidden');
         }
         
+        this.updateIconBounce();
+        
         switch(page) {
             case 'home':
                 this.renderHomePage();
@@ -116,6 +118,35 @@ class BumpaApp {
         
         if (window.innerWidth < 780) {
             document.querySelector('.sidebar').classList.remove('open');
+        }
+    }
+    
+    updateIconBounce() {
+        // Remove bounce from all nav icons
+        document.querySelectorAll('.nav-icon').forEach(icon => {
+            icon.classList.remove('fa-bounce');
+        });
+        
+        document.querySelectorAll('.mobile-footer-nav-icon').forEach(icon => {
+            icon.classList.remove('fa-bounce');
+        });
+        
+        // Add bounce to active nav item icon
+        const activeNavItem = document.querySelector('.nav-item.active');
+        if (activeNavItem) {
+            const icon = activeNavItem.querySelector('.nav-icon');
+            if (icon) {
+                icon.classList.add('fa-bounce');
+            }
+        }
+        
+        // Add bounce to active mobile footer nav item icon
+        const activeMobileItem = document.querySelector('.mobile-footer-nav-item.active');
+        if (activeMobileItem) {
+            const icon = activeMobileItem.querySelector('.mobile-footer-nav-icon');
+            if (icon) {
+                icon.classList.add('fa-bounce');
+            }
         }
     }
     
