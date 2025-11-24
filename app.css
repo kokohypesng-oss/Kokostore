@@ -1199,6 +1199,12 @@ tr:last-child td {
         font-size: 0.75rem;
     }
     
+    /* Hide Actions column on tablet/mobile */
+    table th:last-child,
+    table td:last-child {
+        display: none;
+    }
+    
     .card-body {
         padding: 0.75rem;
     }
@@ -1225,6 +1231,12 @@ tr:last-child td {
     td {
         padding: 0.375rem 0.5rem;
         font-size: 0.7rem;
+    }
+    
+    /* Hide Actions column on mobile */
+    table th:last-child,
+    table td:last-child {
+        display: none;
     }
     
     /* Hide card styling for table containers on mobile */
