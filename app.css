@@ -767,7 +767,7 @@ tr:last-child td {
 
 /* Mobile Footer Navigation */
 .mobile-footer-nav {
-    display: none;
+    display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -775,6 +775,7 @@ tr:last-child td {
     background: var(--white);
     border-top: 1px solid var(--gray-200);
     z-index: 90;
+    width: 100%;
 }
 
 .mobile-footer-nav-list {
@@ -889,7 +890,11 @@ tr:last-child td {
     
     .content-area {
         padding: 1rem;
-        margin-bottom: 0;
+        margin-bottom: 60px;
+    }
+    
+    .mobile-footer-nav {
+        display: flex !important;
     }
     
     .stats-grid {
