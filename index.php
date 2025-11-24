@@ -107,7 +107,7 @@
                     <!-- Home Page -->
                     <div id="home-page" class="page-content">
                         <!-- Page Title and Subtitle (Above Banner) -->
-                        <div class="page-header" style="margin-bottom: 1rem;">
+                        <div class="page-header" style="margin-bottom: 0.5rem;">
                             <h1 class="page-title">Dashboard</h1>
                             <p class="page-subtitle">Welcome back! Here's your business performance overview.</p>
                         </div>
