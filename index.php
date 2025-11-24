@@ -271,32 +271,46 @@
                     
                     <!-- Products Page -->
                     <div id="products-page" class="page-content hidden">
-                        <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                            <div>
-                                <h1 class="page-title">Products</h1>
-                                <p class="page-subtitle">Manage your inventory and product catalog</p>
-                            </div>
-                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')">+ Add Product</button>
+                        <!-- Tab Navigation -->
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem;">
+                            <button class="products-tab active" data-tab="products" onclick="this.classList.add('active'); document.querySelector('[data-tab=collections]').classList.remove('active');">
+                                Products
+                            </button>
+                            <button class="products-tab" data-tab="collections" onclick="this.classList.add('active'); document.querySelector('[data-tab=products]').classList.remove('active');">
+                                Collections
+                            </button>
                         </div>
                         
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-container">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>SKU</th>
-                                                <th>Price</th>
-                                                <th>Stock</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="products-tbody"></tbody>
-                                    </table>
-                                </div>
+                        <!-- Search and Actions Bar -->
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
+                            <div style="flex: 1; position: relative;">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--gray-400);">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                                <input type="text" placeholder="Search products..." style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem;">
                             </div>
+                            <button class="icon-btn" title="Help" style="width: 40px; height: 40px; border: 1px solid var(--gray-300); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </button>
+                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="width: 40px; height: 40px; padding: 0; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Filter Tabs -->
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <button class="filter-tab active" data-filter="all" style="background: var(--store-primary); color: white;">All</button>
+                            <button class="filter-tab" data-filter="published" style="background: transparent; color: var(--gray-700);">Published</button>
+                            <button class="filter-tab" data-filter="unpublished" style="background: transparent; color: var(--gray-700);">Unpublished</button>
+                        </div>
+                        
+                        <!-- Products Content -->
+                        <div id="products-content" style="min-height: 400px;">
+                            <!-- Will be populated by JavaScript or show empty state -->
                         </div>
                     </div>
                     
@@ -633,9 +647,7 @@
             <li>
                 <button class="mobile-footer-nav-item" data-page="products" onclick="app.loadPage('products'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
                     <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" opacity="0.3"/>
-                        <path d="M7 12.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5-3c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6.5l-8 8m-3-3l6-6"/>
+                        <path d="M7.5 3a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm9 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm4.5 3V9h-9V6h9zM6 15a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm9 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm4.5 3v3h-9v-3h9z"/>
                     </svg>
                     <span class="mobile-footer-nav-label">Products</span>
                 </button>

@@ -913,6 +913,75 @@ tr:last-child td {
     }
 }
 
+/* Products Page Styles */
+.products-tab {
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--gray-700);
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.products-tab.active {
+    color: var(--store-primary);
+    border-bottom-color: var(--store-primary);
+}
+
+.products-tab:hover {
+    color: var(--store-primary);
+}
+
+.filter-tab {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+    background: var(--store-primary);
+    color: white;
+}
+
+/* Empty State for Products */
+.products-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    min-height: 400px;
+}
+
+.products-empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.products-empty-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.products-empty-description {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
 .hidden {
     display: none !important;
 }

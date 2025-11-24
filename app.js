@@ -126,46 +126,64 @@ class BumpaApp {
     }
     
     renderProductsPage() {
-        const tbody = document.getElementById('products-tbody');
-        if (!tbody) return;
+        const container = document.getElementById('products-content');
+        if (!container) return;
         
         if (this.products.length === 0) {
-            tbody.innerHTML = `
-                <tr>
-                    <td colspan="6">
-                        <div class="empty-state">
-                            <div class="empty-title">No products yet</div>
-                            <div class="empty-description">Add your first product to get started</div>
-                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')">
-                                + Add Product
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            container.innerHTML = `
+                <div class="products-empty-state">
+                    <div class="products-empty-icon">📦</div>
+                    <div class="products-empty-title">You have no products yet</div>
+                    <div class="products-empty-description">Start by adding your first product</div>
+                    <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="padding: 0.75rem 1.5rem;">Add Product</button>
+                </div>
             `;
             return;
         }
         
-        tbody.innerHTML = this.products.map((product, index) => `
-            <tr>
-                <td>
-                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                        <div style="width: 48px; height: 48px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden;">
-                            ${product.image ? `<img src="${product.image}" style="width: 100%; height: 100%; object-fit: cover;">` : '📦'}
-                        </div>
-                        <strong>${product.name}</strong>
+        const table = `
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>SKU</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${this.products.map((product, index) => `
+                                    <tr>
+                                        <td>
+                                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                <div style="width: 48px; height: 48px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden;">
+                                                    ${product.image ? `<img src="${product.image}" style="width: 100%; height: 100%; object-fit: cover;">` : '📦'}
+                                                </div>
+                                                <strong>${product.name}</strong>
+                                            </div>
+                                        </td>
+                                        <td>${product.sku || '-'}</td>
+                                        <td>₦${parseFloat(product.price).toLocaleString()}</td>
+                                        <td>${product.stock || 0}</td>
+                                        <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
+                                        <td>
+                                            <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
+                                            <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: var(--red);" onclick="app.deleteProduct(${index})">Delete</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
                     </div>
-                </td>
-                <td>${product.sku || '-'}</td>
-                <td>₦${parseFloat(product.price).toLocaleString()}</td>
-                <td>${product.stock || 0}</td>
-                <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
-                <td>
-                    <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
-                    <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: var(--red);" onclick="app.deleteProduct(${index})">Delete</button>
-                </td>
-            </tr>
-        `).join('');
+                </div>
+            </div>
+        `;
+        container.innerHTML = table;
     }
     
     renderOrdersPage() {
