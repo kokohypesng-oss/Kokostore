@@ -1222,17 +1222,20 @@ tr:last-child td {
         font-size: 0.7rem;
     }
     
-    .card {
+    /* Hide card styling for table containers on mobile */
+    .card:has(.table-container) {
+        border: none;
         border-radius: 0;
         border-left: none;
         border-right: none;
-        margin-left: -2rem;
-        margin-right: -2rem;
-        margin-bottom: 1rem;
+        background: transparent;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
     }
     
-    .card-body {
-        padding: 0.5rem 0;
+    .card:has(.table-container) .card-body {
+        padding: 0;
     }
     
     .content-area {
