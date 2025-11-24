@@ -71,16 +71,21 @@ kokostore/
 ## Usage
 
 ### Development
-The theme is currently running in demo mode. Access the preview to see responsive features in action:
+The theme is currently running in demo mode with a standalone `index.php` file. Access the preview to see responsive features in action:
 - Resize browser window to test different breakpoints
 - Use device emulation in browser DevTools
 - The device type and screen width are displayed at the top
 
-### WordPress Integration
+**Important:** The demo uses a standalone PHP file for preview purposes. The actual WordPress theme files in `wp-content/themes/kokostore/` contain the full responsive functionality and require a WordPress installation to work properly.
+
+### WordPress Integration (Required for Full Functionality)
 To use this theme in a WordPress installation:
 1. Copy the `wp-content/themes/kokostore` directory to your WordPress installation
 2. Activate the theme in WordPress Admin → Appearance → Themes
 3. Configure responsive settings in Customizer → Responsive Settings
+4. The theme will then utilize all device detection, responsive images, and dynamic features
+
+**Note:** The theme's advanced features (device-specific images, WooCommerce integration, excerpt length adjustment, etc.) only work within a WordPress environment.
 
 ## Responsive Features Demonstration
 

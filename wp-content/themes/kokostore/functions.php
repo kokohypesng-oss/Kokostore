@@ -105,7 +105,7 @@ function kokostore_viewport_meta() {
 }
 add_action('wp_head', 'kokostore_viewport_meta', 1);
 
-function kokostore_responsive_image_sizes() {
+function kokostore_responsive_image_sizes($sizes, $size) {
     return '(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1200px';
 }
 add_filter('wp_calculate_image_sizes', 'kokostore_responsive_image_sizes', 10, 2);

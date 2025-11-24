@@ -37,7 +37,7 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class('product-card'); ?>>
                         <?php if (has_post_thumbnail()): ?>
                             <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('medium'); ?>
+                                <?php echo kokostore_get_responsive_image(get_post_thumbnail_id(), get_the_title()); ?>
                             </a>
                         <?php endif; ?>
                         
