@@ -485,15 +485,15 @@ body {
     overflow-x: auto;
     width: 100%;
     -webkit-overflow-scrolling: touch;
-    margin: -1.5rem;
-    padding: 1.5rem;
+    display: block;
+    margin: 0;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 100%;
-    table-layout: fixed;
+    table-layout: auto;
+    background: var(--white);
 }
 
 thead {
@@ -504,32 +504,19 @@ thead {
 
 th {
     text-align: left;
-    padding: 0.75rem;
+    padding: 1rem;
     font-weight: 600;
     color: var(--gray-700);
     font-size: 0.875rem;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 2px solid var(--gray-200);
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 td {
-    padding: 0.75rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--gray-200);
     color: var(--gray-900);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-}
-
-td:first-child {
-    min-width: 200px;
-}
-
-td:last-child {
-    min-width: 180px;
-    text-align: right;
+    font-size: 0.875rem;
 }
 
 tr:last-child td {
