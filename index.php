@@ -12,17 +12,17 @@
     <div class="mobile-header">
         <div class="mobile-header-greeting">
             <h2 id="mobile-header-name">Hi, Kokostore</h2>
-            <p>Record a sale today <i class="fa-solid fa-cart-shopping"></i></p>
+            <p>Record a sale today <i class="fa-thin fa-cart-shopping fa-bounce"></i></p>
         </div>
         <div class="mobile-header-actions">
             <button class="mobile-header-action" title="Quick View" onclick="app.loadPage('products')">
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-thin fa-eye fa-bounce"></i>
             </button>
             <button class="mobile-header-action" title="Notifications">
-                <i class="fa-solid fa-bell"></i>
+                <i class="fa-thin fa-bell fa-bounce"></i>
             </button>
             <button class="mobile-header-action" title="Account" onclick="app.loadPage('settings')">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-thin fa-user fa-bounce"></i>
             </button>
         </div>
     </div>
@@ -33,39 +33,39 @@
             <aside class="sidebar">
                 <div class="sidebar-header">
                     <a href="#" class="logo">
-                        <i class="fa-solid fa-store"></i>
+                        <i class="fa-thin fa-store fa-bounce"></i>
                         Kokostore
                     </a>
                 </div>
                 
                 <nav class="nav-menu">
                     <a class="nav-item active" data-page="home">
-                        <i class="nav-icon fa-solid fa-house"></i>
+                        <i class="nav-icon fa-thin fa-house fa-bounce"></i>
                         <span>Home</span>
                     </a>
                     
                     <a class="nav-item" data-page="products">
-                        <i class="nav-icon fa-solid fa-tag"></i>
+                        <i class="nav-icon fa-thin fa-tag fa-bounce"></i>
                         <span>Products</span>
                     </a>
                     
                     <a class="nav-item" data-page="orders">
-                        <i class="nav-icon fa-solid fa-cart-shopping"></i>
+                        <i class="nav-icon fa-thin fa-cart-shopping fa-bounce"></i>
                         <span>Orders</span>
                     </a>
                     
                     <a class="nav-item" data-page="customers">
-                        <i class="nav-icon fa-solid fa-users"></i>
+                        <i class="nav-icon fa-thin fa-users fa-bounce"></i>
                         <span>Customers</span>
                     </a>
                     
                     <a class="nav-item" data-page="analytics">
-                        <i class="nav-icon fa-solid fa-chart-line"></i>
+                        <i class="nav-icon fa-thin fa-chart-line fa-bounce"></i>
                         <span>Analytics</span>
                     </a>
                     
                     <a class="nav-item" data-page="settings">
-                        <i class="nav-icon fa-solid fa-gear"></i>
+                        <i class="nav-icon fa-thin fa-gear fa-bounce"></i>
                         <span>Settings</span>
                     </a>
                 </nav>
@@ -77,7 +77,7 @@
                 <header class="desktop-header">
                     <div class="desktop-header-left">
                         <a href="#" class="desktop-header-logo">
-                            <i class="fa-solid fa-store"></i>
+                            <i class="fa-thin fa-store fa-bounce"></i>
                             Kokostore
                         </a>
                         <nav>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="desktop-header-right">
                         <button class="icon-btn">
-                            <i class="fa-solid fa-bell"></i>
+                            <i class="fa-thin fa-bell fa-bounce"></i>
                             <span class="badge">3</span>
                         </button>
                         <div class="user-profile">
@@ -598,31 +598,31 @@
         <ul class="mobile-footer-nav-list">
             <li>
                 <button class="mobile-footer-nav-item active" data-page="home" onclick="app.loadPage('home'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
-                    <i class="mobile-footer-nav-icon fa-solid fa-house"></i>
+                    <i class="mobile-footer-nav-icon fa-thin fa-house fa-bounce"></i>
                     <span class="mobile-footer-nav-label">Home</span>
                 </button>
             </li>
             <li>
                 <button class="mobile-footer-nav-item" data-page="products" onclick="app.loadPage('products'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
-                    <i class="mobile-footer-nav-icon fa-solid fa-tag"></i>
+                    <i class="mobile-footer-nav-icon fa-thin fa-tag fa-bounce"></i>
                     <span class="mobile-footer-nav-label">Products</span>
                 </button>
             </li>
             <li>
                 <button class="mobile-footer-nav-item" data-page="orders" onclick="app.loadPage('orders'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
-                    <i class="mobile-footer-nav-icon fa-solid fa-cart-shopping"></i>
+                    <i class="mobile-footer-nav-icon fa-thin fa-cart-shopping fa-bounce"></i>
                     <span class="mobile-footer-nav-label">Orders</span>
                 </button>
             </li>
             <li>
                 <button class="mobile-footer-nav-item" data-page="customers" onclick="app.loadPage('customers'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
-                    <i class="mobile-footer-nav-icon fa-solid fa-users"></i>
+                    <i class="mobile-footer-nav-icon fa-thin fa-users fa-bounce"></i>
                     <span class="mobile-footer-nav-label">Customers</span>
                 </button>
             </li>
             <li>
                 <button class="mobile-footer-nav-item" data-page="more" onclick="app.loadPage('more'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
-                    <i class="mobile-footer-nav-icon fa-solid fa-ellipsis"></i>
+                    <i class="mobile-footer-nav-icon fa-thin fa-ellipsis fa-bounce"></i>
                     <span class="mobile-footer-nav-label">More</span>
                 </button>
             </li>

@@ -1140,6 +1140,31 @@ tr:last-child td {
     }
 }
 
+/* Font Awesome Icon Sizing - Increase by 10px */
+.nav-icon {
+    font-size: 1.5rem !important;
+}
+
+.mobile-footer-nav-icon {
+    font-size: 1.5rem !important;
+}
+
+.mobile-header-action i {
+    font-size: 1.5rem !important;
+}
+
+.icon-btn i {
+    font-size: 1.5rem !important;
+}
+
+.logo i {
+    font-size: 1.5rem !important;
+}
+
+.desktop-header-logo i {
+    font-size: 1.5rem !important;
+}
+
 .hidden {
     display: none !important;
 }
