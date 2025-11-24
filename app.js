@@ -230,7 +230,7 @@ class BumpaApp {
                                     <tr>
                                         <td>
                                             <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                                <div style="width: 48px; height: 48px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden;">
+                                                <div class="product-image-card" style="width: 48px; height: 48px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden;">
                                                     ${product.image ? `<img src="${product.image}" style="width: 100%; height: 100%; object-fit: cover;">` : '📦'}
                                                 </div>
                                                 <strong>${product.name}</strong>
