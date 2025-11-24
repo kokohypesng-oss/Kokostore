@@ -14,9 +14,20 @@
             <p>Record a sale today 🛒</p>
         </div>
         <div class="mobile-header-actions">
+            <button class="mobile-header-action" title="Quick View" onclick="app.loadPage('products')">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+            </button>
             <button class="mobile-header-action" title="Notifications">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                </svg>
+            </button>
+            <button class="mobile-header-action" title="Account" onclick="app.loadPage('settings')">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             </button>
         </div>
@@ -494,6 +505,53 @@
             </main>
         </div>
     </div>
+    
+    <!-- Mobile Footer Navigation -->
+    <nav class="mobile-footer-nav">
+        <ul class="mobile-footer-nav-list">
+            <li>
+                <button class="mobile-footer-nav-item active" data-page="home" onclick="app.loadPage('home'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
+                    <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V20a1 1 0 001 1h5a1 1 0 001-1v-6h2v6a1 1 0 001 1h5a1 1 0 001-1v-9.586l.707.707a1 1 0 001.414-1.414l-7-7z"/>
+                    </svg>
+                    <span class="mobile-footer-nav-label">Home</span>
+                </button>
+            </li>
+            <li>
+                <button class="mobile-footer-nav-item" data-page="products" onclick="app.loadPage('products'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
+                    <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 2a1 1 0 000 2h2V3a1 1 0 10-2-1zm0 5a1 1 0 100 2 1 1 0 000-2zm0 5a1 1 0 100 2 1 1 0 000-2zm6-5a1 1 0 100 2 1 1 0 000-2zm0 5a1 1 0 100 2 1 1 0 000-2zm0-10a1 1 0 100 2 1 1 0 000-2zM7 9a1 1 0 11-2 0 1 1 0 012 0zm0 5a1 1 0 11-2 0 1 1 0 012 0zm6-10V3a1 1 0 10-2 1v3a1 1 0 102 0zm0 5a1 1 0 100 2 1 1 0 000-2zm0 5a1 1 0 100 2 1 1 0 000-2z" opacity="0.5"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                    </svg>
+                    <span class="mobile-footer-nav-label">Products</span>
+                </button>
+            </li>
+            <li>
+                <button class="mobile-footer-nav-item" data-page="orders" onclick="app.loadPage('orders'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
+                    <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 4a2 2 0 100 4 2 2 0 000-4zM4 9a1 1 0 000 2h14a1 1 0 100-2H4zm0 4a1 1 0 000 2h14a1 1 0 100-2H4z"/>
+                    </svg>
+                    <span class="mobile-footer-nav-label">Orders</span>
+                </button>
+            </li>
+            <li>
+                <button class="mobile-footer-nav-item" data-page="customers" onclick="app.loadPage('customers'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
+                    <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM9 12a3 3 0 11-6 0 3 3 0 016 0zm7-5a3 3 0 11-6 0 3 3 0 016 0zm2 9a7 7 0 11-14 0 7 7 0 0114 0zM12 15a1 1 0 100-2 1 1 0 000 2z"/>
+                    </svg>
+                    <span class="mobile-footer-nav-label">Customers</span>
+                </button>
+            </li>
+            <li>
+                <button class="mobile-footer-nav-item" data-page="more" onclick="this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
+                    <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="mobile-footer-nav-label">More</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
     
     <!-- Modals -->
     <!-- Add Product Modal -->
