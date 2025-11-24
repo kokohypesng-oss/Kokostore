@@ -131,140 +131,125 @@
                 <div class="content-area">
                     <!-- Home Page -->
                     <div id="home-page" class="page-content">
-                        <div class="page-header">
+                        <!-- 1. Banner Section -->
+                        <div class="home-banner">
                             <h1 class="page-title">Dashboard</h1>
-                            <p class="page-subtitle">Welcome back! Here's what's happening with your business today.</p>
+                            <p class="page-subtitle">Welcome back! Here's your business performance overview.</p>
                         </div>
                         
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-header">
-                                    <div>
-                                        <div class="stat-label">Total Revenue</div>
-                                        <div class="stat-value" id="stat-revenue">₦0</div>
-                                    </div>
-                                    <div class="stat-icon" style="background: var(--store-light); color: var(--store-dark);">💰</div>
-                                </div>
-                                <div class="stat-change positive">
-                                    <span>↗</span> 12% from last month
-                                </div>
-                            </div>
-                            
-                            <div class="stat-card">
-                                <div class="stat-header">
-                                    <div>
-                                        <div class="stat-label">Total Orders</div>
-                                        <div class="stat-value" id="stat-orders">0</div>
-                                    </div>
-                                    <div class="stat-icon" style="background: #DBEAFE; color: #1D4ED8;">📦</div>
-                                </div>
-                                <div class="stat-change positive">
-                                    <span>↗</span> 8% from last month
-                                </div>
-                            </div>
-                            
-                            <div class="stat-card">
-                                <div class="stat-header">
-                                    <div>
-                                        <div class="stat-label">Products</div>
-                                        <div class="stat-value" id="stat-products">0</div>
-                                    </div>
-                                    <div class="stat-icon" style="background: #FEF3C7; color: #D97706;">🏷️</div>
-                                </div>
-                                <div class="stat-change positive">
-                                    <span>↗</span> 4 new this week
-                                </div>
-                            </div>
-                            
-                            <div class="stat-card">
-                                <div class="stat-header">
-                                    <div>
-                                        <div class="stat-label">Customers</div>
-                                        <div class="stat-value" id="stat-customers">0</div>
-                                    </div>
-                                    <div class="stat-icon" style="background: #E9D5FF; color: #7C3AED;">👥</div>
-                                </div>
-                                <div class="stat-change positive">
-                                    <span>↗</span> 2 new today
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card">
+                        <!-- 2. Total Sales Section with Filter -->
+                        <div class="card" style="margin-bottom: 1.5rem;">
                             <div class="card-header">
-                                <h2 class="card-title">Quick Actions</h2>
+                                <h2 class="card-title">Total Sales</h2>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button class="filter-btn active" data-period="today" onclick="app.updateSalesPeriod('today')">Today</button>
+                                    <button class="filter-btn" data-period="week" onclick="app.updateSalesPeriod('week')">Week</button>
+                                    <button class="filter-btn" data-period="month" onclick="app.updateSalesPeriod('month')">Month</button>
+                                </div>
                             </div>
                             <div class="card-body">
-                                <div class="quick-actions">
-                                    <div class="action-card" onclick="app.openModal('add-product-modal')">
-                                        <div class="action-icon">📦</div>
-                                        <div class="action-title">Add Product</div>
-                                        <div class="action-description">Add new items to inventory</div>
-                                    </div>
-                                    
-                                    <div class="action-card" onclick="app.openModal('add-order-modal')">
-                                        <div class="action-icon">🛒</div>
-                                        <div class="action-title">New Order</div>
-                                        <div class="action-description">Record a new sale</div>
-                                    </div>
-                                    
-                                    <div class="action-card" onclick="app.openModal('add-customer-modal')">
-                                        <div class="action-icon">👤</div>
-                                        <div class="action-title">Add Customer</div>
-                                        <div class="action-description">Save customer details</div>
-                                    </div>
-                                    
-                                    <div class="action-card" onclick="app.loadPage('analytics')">
-                                        <div class="action-icon">📊</div>
-                                        <div class="action-title">View Analytics</div>
-                                        <div class="action-description">Business insights</div>
-                                    </div>
-                                </div>
+                                <div style="font-size: 2.5rem; font-weight: bold; color: var(--store-primary); margin-bottom: 0.5rem;" id="total-sales">₦0</div>
+                                <div style="color: var(--gray-600); font-size: 0.875rem;" id="sales-change">↗ 12% from previous period</div>
                             </div>
                         </div>
                         
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2 class="card-title">Recent Orders</h2>
-                                    <a href="#" onclick="app.loadPage('orders'); return false;" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">View All</a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-container">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Order</th>
-                                                    <th>Customer</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="recent-orders"></tbody>
-                                        </table>
+                        <!-- 3. Four Metric Boxes in a Row -->
+                        <div class="metrics-container">
+                            <div class="metric-box">
+                                <div class="metric-label">Updating Orders</div>
+                                <div class="metric-value" id="metric-orders">0</div>
+                                <div class="metric-change">↗ 8% increase</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-label">Products Sold</div>
+                                <div class="metric-value" id="metric-products">0</div>
+                                <div class="metric-change">↗ 12% increase</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-label">New Customers</div>
+                                <div class="metric-value" id="metric-customers">0</div>
+                                <div class="metric-change">↗ 5% increase</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-label">Website Visits</div>
+                                <div class="metric-value" id="metric-visits">2.4K</div>
+                                <div class="metric-change">↗ 3% increase</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 4. Daily Report Button -->
+                        <div style="margin: 1.5rem 0; text-align: center;">
+                            <button class="btn btn-primary" onclick="app.generateDailyReport()" style="padding: 0.75rem 2rem; font-weight: 600;">Generate Daily Report</button>
+                        </div>
+                        
+                        <!-- 5. Four Sliders -->
+                        <div class="sliders-container">
+                            <div class="slider-card">
+                                <div class="slider-title">Revenue Trend</div>
+                                <div class="slider-chart" id="slider-revenue">
+                                    <div class="chart-placeholder">
+                                        <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 100%; padding: 1rem;">
+                                            <div style="width: 8%; background: var(--store-primary); height: 30%;"></div>
+                                            <div style="width: 8%; background: var(--store-primary); height: 45%;"></div>
+                                            <div style="width: 8%; background: var(--store-primary); height: 35%;"></div>
+                                            <div style="width: 8%; background: var(--store-primary); height: 60%;"></div>
+                                            <div style="width: 8%; background: var(--store-primary); height: 50%;"></div>
+                                            <div style="width: 8%; background: var(--store-primary); height: 70%;"></div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div style="text-align: center; color: var(--gray-600); font-size: 0.875rem; margin-top: 0.5rem;">Last 6 Days</div>
                             </div>
                             
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2 class="card-title">Low Stock Alerts</h2>
-                                    <a href="#" onclick="app.loadPage('products'); return false;" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">View All</a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-container">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Product</th>
-                                                    <th>Stock</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="low-stock-alerts"></tbody>
-                                        </table>
+                            <div class="slider-card">
+                                <div class="slider-title">Orders Trend</div>
+                                <div class="slider-chart" id="slider-orders">
+                                    <div class="chart-placeholder">
+                                        <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 100%; padding: 1rem;">
+                                            <div style="width: 8%; background: #3B82F6; height: 25%;"></div>
+                                            <div style="width: 8%; background: #3B82F6; height: 40%;"></div>
+                                            <div style="width: 8%; background: #3B82F6; height: 50%;"></div>
+                                            <div style="width: 8%; background: #3B82F6; height: 55%;"></div>
+                                            <div style="width: 8%; background: #3B82F6; height: 65%;"></div>
+                                            <div style="width: 8%; background: #3B82F6; height: 75%;"></div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div style="text-align: center; color: var(--gray-600); font-size: 0.875rem; margin-top: 0.5rem;">Last 6 Days</div>
+                            </div>
+                            
+                            <div class="slider-card">
+                                <div class="slider-title">Customer Growth</div>
+                                <div class="slider-chart" id="slider-customers">
+                                    <div class="chart-placeholder">
+                                        <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 100%; padding: 1rem;">
+                                            <div style="width: 8%; background: #A855F7; height: 20%;"></div>
+                                            <div style="width: 8%; background: #A855F7; height: 32%;"></div>
+                                            <div style="width: 8%; background: #A855F7; height: 28%;"></div>
+                                            <div style="width: 8%; background: #A855F7; height: 45%;"></div>
+                                            <div style="width: 8%; background: #A855F7; height: 38%;"></div>
+                                            <div style="width: 8%; background: #A855F7; height: 52%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="text-align: center; color: var(--gray-600); font-size: 0.875rem; margin-top: 0.5rem;">Last 6 Days</div>
+                            </div>
+                            
+                            <div class="slider-card">
+                                <div class="slider-title">Traffic Analytics</div>
+                                <div class="slider-chart" id="slider-traffic">
+                                    <div class="chart-placeholder">
+                                        <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 100%; padding: 1rem;">
+                                            <div style="width: 8%; background: #F59E0B; height: 35%;"></div>
+                                            <div style="width: 8%; background: #F59E0B; height: 48%;"></div>
+                                            <div style="width: 8%; background: #F59E0B; height: 42%;"></div>
+                                            <div style="width: 8%; background: #F59E0B; height: 58%;"></div>
+                                            <div style="width: 8%; background: #F59E0B; height: 52%;"></div>
+                                            <div style="width: 8%; background: #F59E0B; height: 68%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="text-align: center; color: var(--gray-600); font-size: 0.875rem; margin-top: 0.5rem;">Last 6 Days</div>
                             </div>
                         </div>
                     </div>

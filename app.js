@@ -121,8 +121,46 @@ class BumpaApp {
     
     renderHomePage() {
         this.updateStats();
-        this.renderRecentOrders();
-        this.renderLowStockAlerts();
+        this.updateMetrics();
+        this.updateSalesDisplay();
+    }
+    
+    updateMetrics() {
+        // Update metric boxes
+        document.getElementById('metric-orders').textContent = this.orders.length;
+        document.getElementById('metric-products').textContent = this.products.length;
+        document.getElementById('metric-customers').textContent = this.customers.length;
+        
+        // Calculate products sold (all products total stock change or simple count)
+        const totalProductsSold = this.orders.reduce((sum) => sum + 1, 0);
+        document.getElementById('metric-products').textContent = this.products.reduce((sum, p) => sum + (parseInt(p.stock) || 0), 0);
+    }
+    
+    updateSalesDisplay() {
+        // Calculate total sales for today
+        const totalSales = this.orders.reduce((sum, order) => sum + parseFloat(order.total || 0), 0);
+        document.getElementById('total-sales').textContent = '₦' + totalSales.toLocaleString();
+    }
+    
+    updateSalesPeriod(period) {
+        // Update filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`[data-period="${period}"]`).classList.add('active');
+        
+        // In a real app, this would filter data by date range
+        const totalSales = this.orders.reduce((sum, order) => sum + parseFloat(order.total || 0), 0);
+        document.getElementById('total-sales').textContent = '₦' + totalSales.toLocaleString();
+        
+        const changeText = {
+            today: '↗ 12% from yesterday',
+            week: '↗ 8% from last week',
+            month: '↗ 5% from last month'
+        };
+        document.getElementById('sales-change').textContent = changeText[period] || '↗ 12% from last period';
+    }
+    
+    generateDailyReport() {
+        alert('Daily Report Generated!\n\nDate: ' + new Date().toLocaleDateString() + '\n\nTotal Orders: ' + this.orders.length + '\nTotal Sales: ₦' + this.orders.reduce((sum, o) => sum + parseFloat(o.total || 0), 0).toLocaleString() + '\nNew Customers: ' + this.customers.length);
     }
     
     renderProductsPage() {
@@ -323,15 +361,26 @@ class BumpaApp {
     }
     
     updateStats() {
-        const totalRevenue = this.orders.reduce((sum, order) => sum + parseFloat(order.total), 0);
+        // Check if old stat elements exist before updating
+        const statRevenue = document.getElementById('stat-revenue');
+        const statOrders = document.getElementById('stat-orders');
+        const statProducts = document.getElementById('stat-products');
+        const statCustomers = document.getElementById('stat-customers');
+        
+        if (!statRevenue && !statOrders && !statProducts && !statCustomers) {
+            // Old stats layout doesn't exist, skip
+            return;
+        }
+        
+        const totalRevenue = this.orders.reduce((sum, order) => sum + parseFloat(order.total || 0), 0);
         const totalOrders = this.orders.length;
         const totalProducts = this.products.length;
         const totalCustomers = this.customers.length;
         
-        document.getElementById('stat-revenue').textContent = `₦${totalRevenue.toLocaleString()}`;
-        document.getElementById('stat-orders').textContent = totalOrders;
-        document.getElementById('stat-products').textContent = totalProducts;
-        document.getElementById('stat-customers').textContent = totalCustomers;
+        if (statRevenue) statRevenue.textContent = `₦${totalRevenue.toLocaleString()}`;
+        if (statOrders) statOrders.textContent = totalOrders;
+        if (statProducts) statProducts.textContent = totalProducts;
+        if (statCustomers) statCustomers.textContent = totalCustomers;
     }
     
     renderRecentOrders() {
