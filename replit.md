@@ -36,5 +36,11 @@ The platform features a clean, minimalist, and modern design inspired by Bumpa, 
 - **CSS Variable Theming:** Enables dynamic and instant theme switching.
 - **Local Persistence:** Utilizes `LocalStorage` for immediate data persistence without server-side dependencies for core features.
 
+## Recent Changes (November 24, 2025)
+- **Font Awesome Icon Update:** All 18 icons updated to use `fa-thin` style with `fa-bounce` animation, increased size by 10px (1.5rem) for better visibility across navigation, headers, and footers.
+- **Home Page Banner Redesign:** Title and subtitle moved above the banner to separate page header from visual banner. Banner now displays as a 100% width × 100px height gradient SVG with centered welcome message. Banner uses store primary color gradient.
+- **Banner Image Structure:** Created SVG-based banner with gradient background (green gradient from primary to dark color) featuring centered white text "Welcome to Kokostore Dashboard".
+
 ## External Dependencies
-- None. The project currently relies solely on client-side browser capabilities and a local PHP development server.
+- Font Awesome 6.4.0 CDN (cdnjs.cloudflare.com) for icon library
+- None. The project currently relies solely on client-side browser capabilities and a local PHP development server (beyond Font Awesome icons).

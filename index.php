@@ -106,10 +106,24 @@
                 <div class="content-area">
                     <!-- Home Page -->
                     <div id="home-page" class="page-content">
-                        <!-- 1. Banner Section -->
-                        <div class="home-banner">
+                        <!-- Page Title and Subtitle (Above Banner) -->
+                        <div class="page-header" style="margin-bottom: 1rem;">
                             <h1 class="page-title">Dashboard</h1>
                             <p class="page-subtitle">Welcome back! Here's your business performance overview.</p>
+                        </div>
+                        
+                        <!-- 1. Banner Section -->
+                        <div class="home-banner">
+                            <svg viewBox="0 0 1200 100" class="banner-image" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="bannerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:var(--store-primary);stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:var(--store-dark);stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="1200" height="100" fill="url(#bannerGradient)"/>
+                                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="bold" fill="white" font-family="Arial, sans-serif">Welcome to Kokostore Dashboard</text>
+                            </svg>
                         </div>
                         
                         <!-- 2. Total Sales Section with Filter -->

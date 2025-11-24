@@ -984,25 +984,18 @@ tr:last-child td {
 
 /* Home Page Redesign */
 .home-banner {
-    background: linear-gradient(135deg, var(--store-primary) 0%, var(--store-dark) 100%);
-    color: white;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    margin-bottom: 1.5rem;
     width: 100%;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
 }
 
-.home-banner .page-title {
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.home-banner .page-subtitle {
-    color: rgba(255, 255, 255, 0.9);
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Filter Buttons */
@@ -1116,8 +1109,7 @@ tr:last-child td {
 /* Responsive adjustments */
 @media (max-width: 780px) {
     .home-banner {
-        height: 120px;
-        padding: 1.5rem;
+        height: 100px;
     }
     
     .metrics-container {
