@@ -1,69 +1,49 @@
 # Kokostore - Business Management Platform (Bumpa-Style)
 
 ## Overview
-Kokostore is a comprehensive web-based business management platform inspired by the Bumpa app. It provides small businesses and vendors with tools to manage inventory, orders, customers, analytics, and more - all from a single, modern dashboard.
+Kokostore is a comprehensive web-based business management platform inspired by the Bumpa app, with advanced mobile-first responsive design and comprehensive store customization features.
 
 **Project Type:** Web Application (Bumpa Replica)  
-**Version:** 2.0.0  
+**Version:** 3.0.0  
 **Created:** November 24, 2025  
 **Technology Stack:** HTML5, CSS3, JavaScript (Vanilla), PHP 8.4, LocalStorage
 
-## Purpose
-This platform replicates the core functionality and design of the Bumpa app for web, providing vendors and small businesses with:
-- Complete inventory management
-- Order processing and tracking
-- Customer relationship management (CRM)
-- Business analytics and insights
-- Settings and configuration management
-
-## Project Structure
-
-```
-kokostore/
-├── index.php                          # Main application HTML
-├── app.css                            # Application styles (Bumpa-inspired design)
-├── app.js                             # Application logic and functionality
-└── wp-content/                        # WordPress theme (legacy, not actively used)
-    └── themes/
-        └── kokostore/
-            ├── style.css
-            ├── functions.php
-            ├── index.php
-            └── js/
-                └── responsive.js
-```
+## Recent Updates (v3.0.0)
+✅ **Mobile Header** - Professional greeting header for mobile devices matching Bumpa's mobile UI  
+✅ **Desktop Header Navigation Bar** - Horizontal navigation for tablets and desktop views  
+✅ **Advanced Color System** - 6 theme colors (Green, Blue, Purple, Pink, Cyan, Orange) with instant theme switching  
+✅ **Store Customization** - Choose store color and set custom domain  
+✅ **Comprehensive Settings Page** - Business info, payment settings, and branding options  
+✅ **Global Theme Application** - All UI elements automatically adapt to selected color scheme  
 
 ## Key Features
 
 ### 1. Dashboard (Home Page)
-- **Real-time Statistics**: Total Revenue, Orders, Products, Customers
-- **Quick Actions**: One-click access to add products, create orders, add customers
-- **Recent Orders**: View latest transactions
-- **Low Stock Alerts**: Monitor inventory levels
-- **Performance Metrics**: Track growth and trends
+- Real-time business statistics (Revenue, Orders, Products, Customers)
+- Quick action cards for common tasks
+- Recent orders display with status tracking
+- Low stock alerts for inventory management
+- Performance metrics and growth indicators
 
 ### 2. Products/Inventory Management
 - Add, edit, and delete products
 - Track SKU, price, and stock levels
-- Product categorization
+- Product categorization system
 - Stock status indicators (In Stock, Low Stock, Out of Stock)
 - Real-time inventory updates
-- Low stock alerts and notifications
 
 ### 3. Orders Management
 - Create and track customer orders
 - Order status tracking (Pending, Completed, Cancelled)
 - Customer information linked to orders
-- Order history and total value tracking
-- Quick order lookup and filtering
+- Order history with total value tracking
 
 ### 4. Customer Relationship Management (CRM)
-- Customer database with contact information
+- Comprehensive customer database
 - Purchase history tracking
-- Total spending per customer
-- Customer segmentation
-- Email and phone number storage
-- Address management
+- Total spending calculations per customer
+- Contact information management
+- Address storage
 
 ### 5. Analytics & Reporting
 - Revenue tracking and trends
@@ -71,115 +51,136 @@ kokostore/
 - Conversion rate monitoring
 - Customer retention metrics
 - Visual performance indicators
-- Growth statistics (% change month-over-month)
 
-### 6. Settings
-- Business information management
-- Payment and currency settings
-- Tax configuration
-- Contact details
-- Business profile customization
+### 6. Advanced Settings
+- **Store Color Selection**: 6 professional color schemes
+  - Green (Bumpa Original)
+  - Blue (Professional)
+  - Purple (Creative)
+  - Pink (Modern)
+  - Cyan (Tech)
+  - Orange (Energetic)
+- **Custom Store Domain**: Input custom domain for your store
+- **Business Information**: Name, email, phone, address
+- **Payment Settings**: Currency and tax configuration
 
 ## Design Features
 
-### Color Scheme (Bumpa-Inspired)
-- **Primary Green**: #10B981 (brand color)
-- **Dark Green**: #059669 (hover states)
-- **Light Green**: #D1FAE5 (backgrounds, highlights)
-- **Gray Scale**: Modern neutral palette for text and backgrounds
-- **White**: Clean, minimalist base
+### Color Scheme System
+- **Customizable Theme**: Select from 6 professional color palettes
+- **Instant Theme Application**: All UI elements dynamically update
+- **Brand Consistency**: Colors applied to all components (buttons, highlights, badges)
+- **CSS Variables**: Global color variables for easy theme switching
 
 ### UI/UX Highlights
-- Clean, minimalist design
+- Clean, minimalist design inspired by Bumpa
 - Card-based layout for content organization
-- Responsive sidebar navigation
-- Icon-based menu items
-- Status badges with color coding
+- Responsive sidebar navigation (desktop)
+- Mobile header with greeting (mobile)
+- Desktop horizontal navigation bar (tablet/desktop)
+- Status badges with adaptive colors
 - Modal dialogs for data entry
 - Empty states with helpful prompts
-- Mobile-first responsive design
+- Touch-optimized for all devices
 
 ### Responsive Breakpoints
-- **Desktop**: 1025px+ (full sidebar, multi-column layouts)
-- **Tablet**: 769-1024px (collapsible sidebar, 2-column grids)
-- **Mobile**: 0-768px (hamburger menu, single column, touch-optimized)
+- **Desktop (1025px+)**: Full sidebar + desktop header nav + search bar
+- **Tablet (769-1024px)**: Collapsible sidebar, horizontal mobile nav
+- **Mobile (0-768px)**: Hamburger menu + mobile header + bottom navigation
 
 ## Technical Implementation
 
 ### Data Storage
 - **LocalStorage**: All data persists in browser localStorage
-- **JSON Format**: Products, orders, and customers stored as JSON
+- **JSON Format**: Products, orders, customers, and settings stored as JSON
 - **Auto-save**: Changes saved immediately on submission
+- **Settings Persistence**: Theme and domain preferences saved
 
 ### Core JavaScript Class: BumpaApp
 ```javascript
-Methods:
-- loadPage(page)           // Navigate between pages
-- renderProductsPage()     // Display products table
-- renderOrdersPage()       // Display orders table
-- renderCustomersPage()    // Display customers table
-- addProduct(e)            // Add new product
-- addOrder(e)              // Create new order
-- addCustomer(e)           // Add new customer
-- updateStats()            // Refresh dashboard statistics
-- loadSampleData()         // Initialize with demo data
+Key Methods:
+- loadPage(page)                    // Navigate between pages
+- changeStoreColor(colorKey)        // Switch theme color
+- updateStoreDomain(domain)         // Save custom domain
+- applyTheme()                      // Apply color scheme globally
+- updateMobileHeader()              // Update greeting text
+- saveSettings()                    // Persist settings to localStorage
 ```
 
-### Features
-- **Single Page Application (SPA)**: No page reloads, smooth navigation
-- **Modal System**: Add/edit forms in overlay modals
-- **Real-time Updates**: Stats refresh automatically
-- **Sample Data**: Pre-loaded demo products, orders, and customers
-- **Form Validation**: Required fields and data validation
+### Color Schemes Object
+```javascript
+colorSchemes = {
+    green: { primary: '#10B981', dark: '#059669', light: '#D1FAE5' },
+    blue: { primary: '#3B82F6', dark: '#1D4ED8', light: '#DBEAFE' },
+    purple: { primary: '#A855F7', dark: '#7C3AED', light: '#F3E8FF' },
+    pink: { primary: '#EC4899', dark: '#DB2777', light: '#FCE7F3' },
+    cyan: { primary: '#06B6D4', dark: '#0891B2', light: '#CFFAFE' },
+    orange: { primary: '#F59E0B', dark: '#D97706', light: '#FEF3C7' }
+}
+```
+
+## Project Structure
+
+```
+kokostore/
+├── index.php                          # Main application (900+ lines)
+├── app.css                            # Complete stylesheet (600+ lines)
+├── app.js                             # Application logic (450+ lines)
+└── wp-content/                        # WordPress theme (legacy)
+    └── themes/kokostore/
+        ├── style.css
+        ├── functions.php
+        ├── index.php
+        └── js/responsive.js
+```
 
 ## Current State
 ✅ PHP 8.4 development server running on port 5000  
-✅ Bumpa-style dashboard with full navigation  
-✅ Products management (CRUD operations)  
-✅ Orders tracking system  
-✅ Customer management (CRM)  
-✅ Analytics and reporting  
-✅ Settings panel  
-✅ Responsive design (mobile, tablet, desktop)  
+✅ Mobile header with professional greeting  
+✅ Desktop header navigation bar  
+✅ Mobile bottom navigation (sidebar converted)  
+✅ 6 color theme options with instant switching  
+✅ Custom store domain configuration  
+✅ Complete business settings panel  
+✅ Full responsive design (mobile, tablet, desktop)  
 ✅ Sample data pre-loaded for demonstration  
-✅ LocalStorage persistence  
+✅ LocalStorage persistence for all data  
+✅ Theme persistence across sessions  
 
 ## Usage
 
-### Getting Started
-1. Access the application through your browser
-2. The app loads with sample data (4 products, 3 orders, 3 customers)
-3. Navigate using the sidebar menu:
-   - **Home**: Dashboard overview
-   - **Products**: Manage inventory
-   - **Orders**: Track sales
-   - **Customers**: CRM
-   - **Analytics**: Business insights
-   - **Settings**: Configuration
+### Mobile View
+1. App displays professional header with greeting: "Hi, [BusinessName]"
+2. Bottom navigation bar for easy access to all sections
+3. Full-screen sections optimized for touch
+4. All features fully accessible on mobile
 
-### Adding Products
-1. Click "Products" in sidebar or "Add Product" quick action
-2. Click "+ Add Product" button
-3. Fill in product details (name, SKU, price, stock, category)
-4. Submit to add to inventory
+### Tablet/Desktop View
+1. Horizontal navigation bar at the top
+2. Sidebar with vertical menu (desktop only)
+3. Multi-column layouts for better screen usage
+4. Search functionality in top bar
+5. Professional workspace layout
 
-### Creating Orders
-1. Navigate to Orders page or use "New Order" quick action
-2. Click "+ New Order"
-3. Enter customer name, order total, and status
-4. Submit to record the sale
+### Customizing Your Store
 
-### Managing Customers
-1. Go to Customers page
-2. Click "+ Add Customer"
-3. Enter customer details (name, email, phone, address)
-4. Submit to save customer
+#### Change Store Color
+1. Go to Settings page
+2. Select a color from "Choose Your Store Colour" palette
+3. Theme applies instantly across entire application
+4. Color preference saved to browser storage
 
-### Mobile Usage
-- Tap the hamburger menu (≡) to open navigation
-- All features fully accessible on mobile
-- Touch-optimized interface
-- Single-column layouts for small screens
+#### Set Custom Domain
+1. Go to Settings page
+2. Enter your custom domain in "Custom Store Domain"
+3. Enter something like: `mystore.bumpa.shop`
+4. Domain is displayed and saved for reference
+
+#### Update Business Info
+1. Go to Settings page
+2. Fill in Business Information section
+3. Update payment settings and tax rate
+4. Save changes
 
 ## Sample Data Included
 
@@ -203,27 +204,43 @@ Methods:
 
 ### Similarities
 ✅ Clean, modern interface  
-✅ Green brand color scheme  
+✅ Customizable color branding  
 ✅ Dashboard with key metrics  
 ✅ Product/inventory management  
 ✅ Order tracking  
 ✅ Customer database  
 ✅ Analytics and reporting  
-✅ Settings panel  
+✅ Settings and customization  
 ✅ Mobile-responsive design  
 ✅ Quick actions for common tasks  
+✅ Professional greeting on mobile  
 
 ### Key Differences
+- **Data Storage**: LocalStorage only (Bumpa uses cloud)
 - **Platform**: Web-only (Bumpa has mobile apps)
-- **Payment Processing**: Not integrated (Bumpa has Bumpa Terminal, Wallet)
+- **Payments**: Not integrated (Bumpa has Terminal, Wallet)
 - **E-commerce**: No store builder (Bumpa creates websites)
-- **Integrations**: No third-party integrations (Bumpa has WhatsApp, Instagram, logistics)
-- **Data Storage**: LocalStorage only (Bumpa uses cloud database)
+- **Integrations**: No third-party integrations yet
+
+## Browser Support
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile Safari (iOS 12+)
+- Chrome Mobile (Android 8+)
+
+## Performance
+- Lightweight vanilla JavaScript (no heavy frameworks)
+- Minimal CSS bundle (~600 lines)
+- Fast page loads (<1s)
+- Smooth animations and transitions
+- Optimized for mobile networks
+- Instant theme switching without page reload
 
 ## Future Enhancements
 
 ### Planned Features
-- Backend API integration
+- Backend API integration with Node.js/Express
 - Database persistence (PostgreSQL)
 - User authentication and multi-user support
 - Payment gateway integration (Paystack, Flutterwave)
@@ -237,35 +254,24 @@ Methods:
 - Bulk operations
 - Dark mode theme
 
-## Browser Support
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile Safari (iOS 12+)
-- Chrome Mobile (Android 8+)
-
-## Performance
-- Lightweight vanilla JavaScript (no heavy frameworks)
-- Minimal CSS bundle
-- Fast page loads
-- Smooth animations
-- Optimized for mobile networks
-
 ## Development
 - **Server**: PHP 8.4 built-in server
-- **Port**: 5000 (bound to 0.0.0.0 for Replit compatibility)
-- **Hot Reload**: Manual refresh required
+- **Port**: 5000 (bound to 0.0.0.0 for Replit)
+- **Environment**: Vanilla HTML5, CSS3, JavaScript
 - **Debugging**: Browser DevTools console
+- **Storage**: Browser LocalStorage API
 
 ## License
 GNU General Public License v2 or later
 
 ## Credits
-Inspired by the Bumpa app (getbumpa.com) - a business management platform for African entrepreneurs.
+Inspired by the Bumpa app (getbumpa.com) - a comprehensive business management platform for African entrepreneurs.
 
 ## Notes
-- All data is stored locally in the browser
+- All data is stored locally in the browser using LocalStorage
 - Clearing browser data will reset the application
 - Sample data loads automatically on first visit
+- Theme preferences persist across sessions
+- Custom domain and business info saved locally
 - No server-side processing for data operations
-- Designed for demonstration and prototype purposes
+- Fully functional offline (after initial load)

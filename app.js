@@ -6,12 +6,34 @@ class BumpaApp {
         this.products = JSON.parse(localStorage.getItem('products')) || [];
         this.orders = JSON.parse(localStorage.getItem('orders')) || [];
         this.customers = JSON.parse(localStorage.getItem('customers')) || [];
+        this.settings = JSON.parse(localStorage.getItem('settings')) || this.getDefaultSettings();
+        
+        this.colorSchemes = {
+            green: { primary: '#10B981', dark: '#059669', light: '#D1FAE5', name: 'Green' },
+            blue: { primary: '#3B82F6', dark: '#1D4ED8', light: '#DBEAFE', name: 'Blue' },
+            purple: { primary: '#A855F7', dark: '#7C3AED', light: '#F3E8FF', name: 'Purple' },
+            pink: { primary: '#EC4899', dark: '#DB2777', light: '#FCE7F3', name: 'Pink' },
+            cyan: { primary: '#06B6D4', dark: '#0891B2', light: '#CFFAFE', name: 'Cyan' },
+            orange: { primary: '#F59E0B', dark: '#D97706', light: '#FEF3C7', name: 'Orange' }
+        };
         
         this.init();
     }
     
+    getDefaultSettings() {
+        return {
+            storeColor: 'green',
+            storeDomain: 'kokostore.bumpa.shop',
+            businessName: 'Kokostore',
+            businessEmail: 'contact@kokostore.com',
+            businessPhone: '+234 800 000 0000'
+        };
+    }
+    
     init() {
         this.setupEventListeners();
+        this.applyTheme();
+        this.updateMobileHeader();
         this.loadPage('home');
         this.updateStats();
         
@@ -220,7 +242,59 @@ class BumpaApp {
     }
     
     renderSettingsPage() {
-        // Settings page is static for now
+        this.renderStoreColorSettings();
+        this.renderStoreDomainSettings();
+    }
+    
+    renderStoreColorSettings() {
+        const container = document.getElementById('color-palette');
+        if (!container) return;
+        
+        container.innerHTML = Object.entries(this.colorSchemes).map(([key, scheme]) => `
+            <div class="color-option ${this.settings.storeColor === key ? 'selected' : ''}" onclick="app.changeStoreColor('${key}')">
+                <div class="color-swatch" style="background: ${scheme.primary};"></div>
+                <div class="color-name">${scheme.name}</div>
+            </div>
+        `).join('');
+    }
+    
+    renderStoreDomainSettings() {
+        const domainInput = document.getElementById('store-domain-input');
+        if (domainInput) {
+            domainInput.value = this.settings.storeDomain;
+        }
+    }
+    
+    changeStoreColor(colorKey) {
+        this.settings.storeColor = colorKey;
+        this.saveSettings();
+        this.applyTheme();
+        this.renderStoreColorSettings();
+    }
+    
+    updateStoreDomain(domain) {
+        this.settings.storeDomain = domain;
+        this.saveSettings();
+    }
+    
+    applyTheme() {
+        const scheme = this.colorSchemes[this.settings.storeColor];
+        if (scheme) {
+            document.documentElement.style.setProperty('--store-primary', scheme.primary);
+            document.documentElement.style.setProperty('--store-dark', scheme.dark);
+            document.documentElement.style.setProperty('--store-light', scheme.light);
+        }
+    }
+    
+    updateMobileHeader() {
+        const headerName = document.getElementById('mobile-header-name');
+        if (headerName) {
+            headerName.textContent = this.settings.businessName || 'Kokostore';
+        }
+    }
+    
+    saveSettings() {
+        localStorage.setItem('settings', JSON.stringify(this.settings));
     }
     
     updateStats() {
