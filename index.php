@@ -502,6 +502,119 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- More Page -->
+                <div id="more-page" class="page-content hidden">
+                    <div class="page-header">
+                        <h1 class="page-title">More</h1>
+                        <p class="page-subtitle">Additional tools and features</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Notifications & Alerts</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" checked> Low Stock Alerts
+                                </label>
+                                <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem;">Get notified when products run low</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" checked> Order Updates
+                                </label>
+                                <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem;">Receive notifications for new orders</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <input type="checkbox" checked> Weekly Reports
+                                </label>
+                                <p style="font-size: 0.875rem; color: var(--gray-600); margin-top: 0.25rem;">Get weekly business summary</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Account Settings</h2>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                                <button class="btn btn-secondary" style="width: 100%;">Change Password</button>
+                                <button class="btn btn-secondary" style="width: 100%;">Two-Factor Auth</button>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <button class="btn btn-secondary" style="width: 100%;">Export Data</button>
+                                <button class="btn btn-secondary" style="width: 100%;">Backup Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">App Information</h2>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 0.25rem;">Version</div>
+                                    <div style="font-weight: 600;">3.1.0</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 0.25rem;">Last Updated</div>
+                                    <div style="font-weight: 600;">Nov 24, 2025</div>
+                                </div>
+                            </div>
+                            <div style="padding-top: 1rem; border-top: 1px solid var(--gray-200);">
+                                <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem;">Need help? Visit our help center or contact support</p>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <button class="btn btn-outline" style="width: 100%;">Help Center</button>
+                                    <button class="btn btn-outline" style="width: 100%;">Contact Support</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">App Preferences</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="form-label">Theme</label>
+                                <select class="form-select">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark (Coming Soon)</option>
+                                    <option value="auto">Auto</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Language</label>
+                                <select class="form-select">
+                                    <option value="en">English</option>
+                                    <option value="yo">Yoruba (Coming Soon)</option>
+                                    <option value="ha">Hausa (Coming Soon)</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;">Save Preferences</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Danger Zone</h2>
+                        </div>
+                        <div class="card-body">
+                            <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1.5rem;">These actions cannot be undone. Please proceed with caution.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <button class="btn btn-secondary" style="width: 100%;">Clear Local Data</button>
+                                <button class="btn" style="width: 100%; background: var(--red); color: white; border: none;">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>
@@ -520,8 +633,9 @@
             <li>
                 <button class="mobile-footer-nav-item" data-page="products" onclick="app.loadPage('products'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
                     <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 2a1 1 0 000 2h2V3a1 1 0 10-2-1zm0 5a1 1 0 100 2 1 1 0 000-2zm0 5a1 1 0 100 2 1 1 0 000-2zm6-5a1 1 0 100 2 1 1 0 000-2zm0 5a1 1 0 100 2 1 1 0 000-2zm0-10a1 1 0 100 2 1 1 0 000-2zM7 9a1 1 0 11-2 0 1 1 0 012 0zm0 5a1 1 0 11-2 0 1 1 0 012 0zm6-10V3a1 1 0 10-2 1v3a1 1 0 102 0zm0 5a1 1 0 100 2 1 1 0 000-2zm0 5a1 1 0 100 2 1 1 0 000-2z" opacity="0.5"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" opacity="0.3"/>
+                        <path d="M7 12.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5-3c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6.5l-8 8m-3-3l6-6"/>
                     </svg>
                     <span class="mobile-footer-nav-label">Products</span>
                 </button>
@@ -529,7 +643,7 @@
             <li>
                 <button class="mobile-footer-nav-item" data-page="orders" onclick="app.loadPage('orders'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
                     <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M7 4a2 2 0 100 4 2 2 0 000-4zM4 9a1 1 0 000 2h14a1 1 0 100-2H4zm0 4a1 1 0 000 2h14a1 1 0 100-2H4z"/>
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                     </svg>
                     <span class="mobile-footer-nav-label">Orders</span>
                 </button>
@@ -543,7 +657,7 @@
                 </button>
             </li>
             <li>
-                <button class="mobile-footer-nav-item" data-page="more" onclick="this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
+                <button class="mobile-footer-nav-item" data-page="more" onclick="app.loadPage('more'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
                     <svg class="mobile-footer-nav-icon" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
                     </svg>

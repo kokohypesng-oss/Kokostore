@@ -109,9 +109,12 @@ class BumpaApp {
             case 'settings':
                 this.renderSettingsPage();
                 break;
+            case 'more':
+                this.renderMorePage();
+                break;
         }
         
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 780) {
             document.querySelector('.sidebar').classList.remove('open');
         }
     }
@@ -244,6 +247,10 @@ class BumpaApp {
     renderSettingsPage() {
         this.renderStoreColorSettings();
         this.renderStoreDomainSettings();
+    }
+    
+    renderMorePage() {
+        // More page is static in HTML
     }
     
     renderStoreColorSettings() {

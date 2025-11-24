@@ -4,24 +4,26 @@
 Kokostore is a comprehensive web-based business management platform inspired by the Bumpa app, with advanced mobile-first responsive design and comprehensive store customization features.
 
 **Project Type:** Web Application (Bumpa Replica)  
-**Version:** 3.1.0  
+**Version:** 3.2.0  
 **Created:** November 24, 2025  
 **Technology Stack:** HTML5, CSS3, JavaScript (Vanilla), PHP 8.4, LocalStorage
 
-## Latest Updates (v3.1.0)
+## Latest Updates (v3.2.0)
+✅ **Mobile Breakpoint Adjusted** - Set to 780px for optimal mobile view experience  
+✅ **Enhanced Footer Navigation Icons** - Updated to match Bumpa style (Home, Products with tag icon, Orders with cart icon, Customers, More)  
+✅ **More Page Category** - New comprehensive section with extended features and settings  
+✅ **More Page Settings Sections**:
+  - Notifications & Alerts (Low Stock, Order Updates, Weekly Reports)
+  - Account Settings (Password, 2FA, Export, Backup)
+  - App Information (Version, Updates, Help Center, Support)
+  - App Preferences (Theme, Language, Save Options)
+  - Danger Zone (Clear Data, Delete Account)
+
+## Previous Updates (v3.1.0)
 ✅ **Mobile Footer Navigation Bar** - Bottom navigation for mobile with Home, Products, Orders, Customers, More  
 ✅ **Enhanced Mobile Header** - Quick view icon (eye), notifications, and profile icon in horizontal layout  
 ✅ **Quick View Icon** - Direct access to products page from mobile header  
 ✅ **Profile Icon** - Direct access to account settings from mobile header  
-✅ **Responsive Mobile Navigation** - Proper spacing and styling for all screen sizes  
-
-## Previous Updates (v3.0.0)
-✅ **Mobile Header** - Professional greeting header for mobile devices matching Bumpa's mobile UI  
-✅ **Desktop Header Navigation Bar** - Horizontal navigation for tablets and desktop views  
-✅ **Advanced Color System** - 6 theme colors (Green, Blue, Purple, Pink, Cyan, Orange) with instant theme switching  
-✅ **Store Customization** - Choose store color and set custom domain  
-✅ **Comprehensive Settings Page** - Business info, payment settings, and branding options  
-✅ **Global Theme Application** - All UI elements automatically adapt to selected color scheme  
 
 ## Key Features
 
@@ -59,34 +61,36 @@ Kokostore is a comprehensive web-based business management platform inspired by 
 - Customer retention metrics
 - Visual performance indicators
 
-### 6. Advanced Settings
+### 6. Settings & More
 - **Store Color Selection**: 6 professional color schemes
-  - Green (Bumpa Original)
-  - Blue (Professional)
-  - Purple (Creative)
-  - Pink (Modern)
-  - Cyan (Tech)
-  - Orange (Energetic)
 - **Custom Store Domain**: Input custom domain for your store
 - **Business Information**: Name, email, phone, address
 - **Payment Settings**: Currency and tax configuration
+- **Notifications & Alerts**: Customize notification preferences
+- **Account Settings**: Security and data management
+- **App Preferences**: Theme and language options
+- **Help & Support**: Contact and documentation access
 
 ## Design Features
 
-### Mobile Experience
+### Mobile Experience (Optimized for 780px and below)
 - **Header with 3 Quick Action Icons**:
   - 👁️ Quick View (access products)
   - 🔔 Notifications
   - 👤 Account Profile (access settings)
-- **Footer Navigation Bar**: Home, Products, Orders, Customers, More
+- **Footer Navigation Bar** (5 options): 
+  - 🏠 Home
+  - 🏷️ Products (with tag icon)
+  - 🛒 Orders (with shopping cart icon)
+  - 👥 Customers
+  - ⋯ More
 - **Professional Greeting Header**: "Hi, [BusinessName]"
-- **Bottom Navigation**: Easy thumb-friendly access on mobile
 - **Full-screen Sections**: Optimized for touch interaction
 
 ### Color Scheme System
 - **Customizable Theme**: Select from 6 professional color palettes
 - **Instant Theme Application**: All UI elements dynamically update
-- **Brand Consistency**: Colors applied to all components (buttons, highlights, badges)
+- **Brand Consistency**: Colors applied to all components
 - **CSS Variables**: Global color variables for easy theme switching
 
 ### UI/UX Highlights
@@ -100,11 +104,12 @@ Kokostore is a comprehensive web-based business management platform inspired by 
 - Modal dialogs for data entry
 - Empty states with helpful prompts
 - Touch-optimized for all devices
+- Perfect categorization in all sections
 
 ### Responsive Breakpoints
-- **Desktop (1025px+)**: Full sidebar + desktop header nav + search bar
-- **Tablet (769-1024px)**: Collapsible sidebar, horizontal mobile nav
-- **Mobile (0-768px)**: Mobile header + footer nav + bottom navigation
+- **Desktop (781px+)**: Full sidebar + desktop header nav + search bar
+- **Tablet (781-780px)**: Optimized tablet view
+- **Mobile (780px and below)**: Mobile header + footer nav + bottom navigation
 
 ## Technical Implementation
 
@@ -124,17 +129,18 @@ Key Methods:
 - updateMobileHeader()              // Update greeting text
 - saveSettings()                    // Persist settings to localStorage
 - loadSampleData()                  // Load demo data
+- renderMorePage()                  // Handle More page
 ```
 
 ### Color Schemes Object
 ```javascript
 colorSchemes = {
-    green: { primary: '#10B981', dark: '#059669', light: '#D1FAE5', name: 'Green' },
-    blue: { primary: '#3B82F6', dark: '#1D4ED8', light: '#DBEAFE', name: 'Blue' },
-    purple: { primary: '#A855F7', dark: '#7C3AED', light: '#F3E8FF', name: 'Purple' },
-    pink: { primary: '#EC4899', dark: '#DB2777', light: '#FCE7F3', name: 'Pink' },
-    cyan: { primary: '#06B6D4', dark: '#0891B2', light: '#CFFAFE', name: 'Cyan' },
-    orange: { primary: '#F59E0B', dark: '#D97706', light: '#FEF3C7', name: 'Orange' }
+    green: { primary: '#10B981', dark: '#059669', light: '#D1FAE5' },
+    blue: { primary: '#3B82F6', dark: '#1D4ED8', light: '#DBEAFE' },
+    purple: { primary: '#A855F7', dark: '#7C3AED', light: '#F3E8FF' },
+    pink: { primary: '#EC4899', dark: '#DB2777', light: '#FCE7F3' },
+    cyan: { primary: '#06B6D4', dark: '#0891B2', light: '#CFFAFE' },
+    orange: { primary: '#F59E0B', dark: '#D97706', light: '#FEF3C7' }
 }
 ```
 
@@ -142,9 +148,9 @@ colorSchemes = {
 
 ```
 kokostore/
-├── index.php                          # Main application
-├── app.css                            # Complete stylesheet
-├── app.js                             # Application logic
+├── index.php                          # Main application (720+ lines)
+├── app.css                            # Complete stylesheet (920+ lines)
+├── app.js                             # Application logic (480+ lines)
 └── wp-content/                        # WordPress theme (legacy)
     └── themes/kokostore/
         ├── style.css
@@ -155,10 +161,11 @@ kokostore/
 
 ## Current State
 ✅ PHP 8.4 development server running on port 5000  
-✅ Mobile header with 3 quick action icons (quick view, notifications, profile)  
-✅ Mobile footer navigation bar with 5 options (Home, Products, Orders, Customers, More)  
+✅ Mobile breakpoint adjusted to 780px  
+✅ Mobile header with 3 quick action icons  
+✅ Mobile footer navigation bar with 5 options + matching icons  
 ✅ Desktop header navigation bar  
-✅ Mobile bottom navigation (footer nav bar)  
+✅ More page with comprehensive settings and features  
 ✅ 6 color theme options with instant switching  
 ✅ Custom store domain configuration  
 ✅ Complete business settings panel  
@@ -169,45 +176,58 @@ kokostore/
 
 ## Usage
 
-### Mobile View
+### Mobile View (780px and below)
 **Header Section:**
-- Left: Professional greeting ("Hi, Kokostore") + subtitle ("Record a sale today 🛒")
-- Right: 3 quick action buttons in horizontal line:
-  - 👁️ Quick View (eye icon) - Go to Products
-  - 🔔 Notifications (bell icon)
-  - 👤 Account (profile icon) - Go to Settings
+- Left: Professional greeting ("Hi, Kokostore")
+- Right: 3 quick action buttons in horizontal line
+- Subtitle: "Record a sale today 🛒"
+
+**Navigation Sections:**
+- Home - Dashboard with stats and quick actions
+- Products - View and manage inventory
+- Orders - Track and create orders
+- Customers - Manage customer relationships
+- More - Additional settings and features
 
 **Footer Navigation:**
-- 5 main navigation options at bottom of screen
+- 5 main navigation options at bottom
 - Easy thumb access for mobile users
 - Active state highlighting
 
-### Tablet/Desktop View
+### Desktop View (781px and above)
 1. Horizontal navigation bar at the top
 2. Sidebar with vertical menu (desktop only)
-3. Multi-column layouts for better screen usage
+3. Multi-column layouts
 4. Search functionality in top bar
 5. Professional workspace layout
 
-### Customizing Your Store
+### More Page Features
 
-#### Change Store Color
-1. Go to Settings page
-2. Select a color from "Choose Your Store Colour" palette
-3. Theme applies instantly across entire application
-4. Color preference saved to browser storage
+#### Notifications & Alerts
+- Low Stock Alerts - Get notified when inventory is low
+- Order Updates - Receive new order notifications
+- Weekly Reports - Get business summary reports
 
-#### Set Custom Domain
-1. Go to Settings page
-2. Enter your custom domain in "Custom Store Domain"
-3. Enter something like: `mystore.bumpa.shop`
-4. Domain is displayed and saved for reference
+#### Account Settings
+- Change Password - Update account security
+- Two-Factor Authentication - Enable 2FA
+- Export Data - Download your data
+- Backup Settings - Create backup of configuration
 
-#### Update Business Info
-1. Go to Settings page
-2. Fill in Business Information section
-3. Update payment settings and tax rate
-4. Save changes
+#### App Information
+- Version Info - Current app version
+- Last Updated - Most recent update date
+- Help Center - Access documentation
+- Contact Support - Reach out to support team
+
+#### App Preferences
+- Theme Selection - Light/Dark/Auto options
+- Language Selection - English, Yoruba, Hausa support
+- Save Preferences - Store your preferences
+
+#### Danger Zone
+- Clear Local Data - Reset all local storage
+- Delete Account - Remove your account permanently
 
 ## Sample Data Included
 
@@ -242,6 +262,7 @@ kokostore/
 ✅ Quick actions for common tasks  
 ✅ Professional greeting on mobile  
 ✅ Footer navigation for mobile  
+✅ More options for extended features  
 
 ### Key Differences
 - **Data Storage**: LocalStorage only (Bumpa uses cloud)
@@ -249,6 +270,7 @@ kokostore/
 - **Payments**: Not integrated (Bumpa has Terminal, Wallet)
 - **E-commerce**: No store builder (Bumpa creates websites)
 - **Integrations**: No third-party integrations yet
+- **Backend**: No API integration yet
 
 ## Browser Support
 - Chrome/Edge (latest)
@@ -259,12 +281,12 @@ kokostore/
 
 ## Performance
 - Lightweight vanilla JavaScript (no heavy frameworks)
-- Minimal CSS bundle (~900 lines)
+- Minimal CSS bundle (~920 lines)
 - Fast page loads (<1s)
 - Smooth animations and transitions
 - Optimized for mobile networks
 - Instant theme switching without page reload
-- Footer navigation fixed at bottom for easy access
+- Fixed footer navigation for easy access
 
 ## Future Enhancements
 
@@ -305,3 +327,5 @@ Inspired by the Bumpa app (getbumpa.com) - a comprehensive business management p
 - No server-side processing for data operations
 - Fully functional offline (after initial load)
 - Mobile view optimized for touch with footer navigation and quick-access header icons
+- Mobile breakpoint set to 780px for optimal experience
+- All sections perfectly categorized and organized
