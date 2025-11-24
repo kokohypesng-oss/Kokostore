@@ -45,7 +45,7 @@
                     </a>
                     
                     <a class="nav-item" data-page="products">
-                        <i class="nav-icon fa-thin fa-tag fa-bounce"></i>
+                        <i class="nav-icon fa-solid fa-tag fa-bounce"></i>
                         <span>Products</span>
                     </a>
                     
@@ -617,7 +617,7 @@
             </li>
             <li>
                 <button class="mobile-footer-nav-item" data-page="products" onclick="app.loadPage('products'); this.classList.add('active'); document.querySelectorAll('.mobile-footer-nav-item').forEach(el => el !== this && el.classList.remove('active'));">
-                    <i class="mobile-footer-nav-icon fa-thin fa-tag fa-bounce"></i>
+                    <i class="mobile-footer-nav-icon fa-solid fa-tag fa-bounce"></i>
                     <span class="mobile-footer-nav-label">Products</span>
                 </button>
             </li>
