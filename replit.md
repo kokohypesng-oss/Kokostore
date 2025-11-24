@@ -40,6 +40,8 @@ The platform features a clean, minimalist, and modern design inspired by Bumpa, 
 - **Font Awesome Icon Update:** All 18 icons updated to use `fa-thin` style with `fa-bounce` animation, increased size by 10px (1.5rem) for better visibility across navigation, headers, and footers.
 - **Home Page Banner Redesign:** Title and subtitle moved above the banner to separate page header from visual banner. Banner now displays as a 100% width × 100px height gradient SVG with centered welcome message. Banner uses store primary color gradient.
 - **Banner Image Structure:** Created SVG-based banner with gradient background (green gradient from primary to dark color) featuring centered white text "Welcome to Kokostore Dashboard".
+- **Mobile Optimizations:** Reduced font sizes (0.65rem on mobile), adjusted table padding, hidden product image cards on mobile view (480px and tablet 780px), centered footer navigation content, set footer nav width to 100%.
+- **Full-Width Body Optimization:** All layout containers (`body`, `.app-container`, `.app-main`, `.main-content`, `.content-area`) now set to `width: 100%` for optimal viewport usage across all pages.
 
 ## External Dependencies
 - Font Awesome 6.4.0 CDN (cdnjs.cloudflare.com) for icon library
