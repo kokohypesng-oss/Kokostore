@@ -776,15 +776,18 @@ tr:last-child td {
     border-top: 1px solid var(--gray-200);
     z-index: 90;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobile-footer-nav-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     list-style: none;
     padding: 0.75rem 0;
     gap: 0;
+    width: 100%;
 }
 
 .mobile-footer-nav-item {
