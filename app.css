@@ -985,7 +985,7 @@ tr:last-child td {
 /* Home Page Redesign */
 .home-banner {
     width: 100%;
-    height: 200px;
+    height: 300px;
     margin-bottom: 1.5rem;
     overflow: hidden;
     border-radius: 0.75rem;
@@ -1109,7 +1109,7 @@ tr:last-child td {
 /* Responsive adjustments */
 @media (max-width: 780px) {
     .home-banner {
-        height: 200px;
+        height: 300px;
     }
     
     .metrics-container {
