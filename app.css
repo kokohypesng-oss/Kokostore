@@ -173,7 +173,7 @@ body {
 
 /* Desktop Header Nav Bar */
 .desktop-header {
-    display: none;
+    display: flex;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
     padding: 0 2rem;
@@ -193,7 +193,7 @@ body {
 }
 
 .desktop-header-logo {
-    font-size: 1.25rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--store-primary);
     text-decoration: none;
@@ -914,15 +914,15 @@ tr:last-child td {
     }
     
     .top-bar {
-        display: none;
+        display: flex;
     }
     
     .search-bar {
-        display: none;
+        display: flex;
     }
     
     .color-palette {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
@@ -1012,7 +1012,7 @@ tr:last-child td {
 /* Home Page Redesign */
 .home-banner {
     width: 100%;
-    height: 250px;
+    height: 150px;
     margin-bottom: 0rem;
     overflow: hidden;
     border-radius: 0.75rem;
@@ -1025,28 +1025,62 @@ tr:last-child td {
     display: block;
 }
 
-/* Filter Buttons */
-.filter-btn {
-    padding: 0.5rem 1rem;
+/* Total Sales Card Upgrade */
+.total-sales-card {
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.total-sales-body {
+    padding: 2rem 1.5rem;
+}
+
+.total-sales-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--store-primary);
+    margin-bottom: 0.75rem;
+}
+
+.total-sales-change {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Period Dropdown Filter */
+.period-dropdown-wrapper {
+    position: relative;
+}
+
+.period-dropdown {
+    padding: 0.625rem 0.875rem;
     border: 1px solid var(--gray-300);
     background: var(--white);
     color: var(--gray-700);
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     font-size: 0.875rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.25em 1.25em;
+    padding-right: 2rem;
 }
 
-.filter-btn:hover {
+.period-dropdown:hover {
     border-color: var(--store-primary);
-    color: var(--store-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.filter-btn.active {
-    background: var(--store-primary);
-    color: white;
+.period-dropdown:focus {
+    outline: none;
     border-color: var(--store-primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
 /* Metrics Container */
@@ -1140,7 +1174,7 @@ tr:last-child td {
 }
 
 .desktop-header-logo i {
-    font-size: 10rem !important;
+    font-size: 2.5rem !important;
 }
 
 /* Mobile Table Adjustments */

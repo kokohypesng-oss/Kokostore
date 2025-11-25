@@ -126,18 +126,20 @@
                         </div>
                         
                         <!-- 2. Total Sales Section with Filter -->
-                        <div class="card" style="margin-bottom: 1.5rem;">
+                        <div class="card total-sales-card" style="margin-bottom: 1.5rem;">
                             <div class="card-header">
                                 <h2 class="card-title">Total Sales</h2>
-                                <div style="display: flex; gap: 0.5rem;">
-                                    <button class="filter-btn active" data-period="today" onclick="app.updateSalesPeriod('today')">Today</button>
-                                    <button class="filter-btn" data-period="week" onclick="app.updateSalesPeriod('week')">Week</button>
-                                    <button class="filter-btn" data-period="month" onclick="app.updateSalesPeriod('month')">Month</button>
+                                <div class="period-dropdown-wrapper">
+                                    <select class="period-dropdown" id="period-select" onchange="app.updateSalesPeriod(this.value)">
+                                        <option value="today">Today</option>
+                                        <option value="week">This Week</option>
+                                        <option value="month">This Month</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <div style="font-size: 2.5rem; font-weight: bold; color: var(--store-primary); margin-bottom: 0.5rem;" id="total-sales">₦0</div>
-                                <div style="color: var(--gray-600); font-size: 0.875rem;" id="sales-change">↗ 12% from previous period</div>
+                            <div class="card-body total-sales-body">
+                                <div class="total-sales-value" id="total-sales">₦0</div>
+                                <div class="total-sales-change" id="sales-change">↗ 12% from previous period</div>
                             </div>
                         </div>
                         
