@@ -173,7 +173,7 @@ body {
 
 /* Desktop Header Nav Bar */
 .desktop-header {
-    display: flex;
+    display: none;
     background: var(--white);
     border-bottom: 1px solid var(--gray-200);
     padding: 0 2rem;
@@ -772,7 +772,7 @@ tr:last-child td {
 
 /* Mobile Footer Navigation */
 .mobile-footer-nav {
-    display: flex;
+    display: none;
     position: fixed;
     bottom: 0;
     left: 0;
