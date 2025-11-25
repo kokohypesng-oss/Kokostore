@@ -1035,17 +1035,17 @@ tr:last-child td {
 .total-sales-body {
     padding: 2rem 1.5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 1rem;
 }
 
 .total-sales-value {
     font-size: 3rem;
     font-weight: 700;
     color: var(--store-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
 }
 
 .total-sales-change {
