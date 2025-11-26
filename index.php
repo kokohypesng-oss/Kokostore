@@ -125,15 +125,7 @@
                         
                         <!-- 1. Banner Section -->
                         <div class="home-banner">
-                            <svg viewBox="0 0 1200 300" class="banner-image" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="bannerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:var(--store-primary);stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:var(--store-dark);stop-opacity:1" />
-                                    </linearGradient>
-                                </defs>
-                                <rect width="1200" height="300" fill="url(#bannerGradient)"/>
-                            </svg>
+                            <img src="professional_e-comme_24a4667a.jpg" alt="E-commerce Dashboard Banner" class="banner-image">
                         </div>
                         
                         <!-- 2. Total Sales Section with Filter -->
