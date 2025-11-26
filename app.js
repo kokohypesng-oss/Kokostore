@@ -6,6 +6,7 @@ class BumpaApp {
         this.products = JSON.parse(localStorage.getItem('products')) || [];
         this.orders = JSON.parse(localStorage.getItem('orders')) || [];
         this.customers = JSON.parse(localStorage.getItem('customers')) || [];
+        this.payments = JSON.parse(localStorage.getItem('payments')) || [];
         this.settings = JSON.parse(localStorage.getItem('settings')) || this.getDefaultSettings();
         
         this.colorSchemes = {
@@ -37,6 +38,7 @@ class BumpaApp {
         this.updateMobileHeader();
         this.loadPage('home');
         this.updateStats();
+        this.updateNotificationBadge();
         
         if (this.products.length === 0) {
             this.loadSampleData();
@@ -428,6 +430,38 @@ class BumpaApp {
         if (statCustomers) statCustomers.textContent = totalCustomers;
     }
     
+    getNotificationCount() {
+        let count = 0;
+        
+        // Count low stock notifications
+        const lowStockProducts = this.products.filter(p => parseInt(p.stock) < 10);
+        count += lowStockProducts.length;
+        
+        // Count pending orders
+        const pendingOrders = this.orders.filter(o => o.status === 'pending');
+        count += pendingOrders.length;
+        
+        // Count pending payments
+        const pendingPayments = this.payments.filter(p => p.status === 'pending');
+        count += pendingPayments.length;
+        
+        return count;
+    }
+    
+    updateNotificationBadge() {
+        const badgeElements = document.querySelectorAll('.badge');
+        const notificationCount = this.getNotificationCount();
+        
+        badgeElements.forEach(badge => {
+            if (notificationCount > 0) {
+                badge.textContent = notificationCount;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        });
+    }
+    
     renderRecentOrders() {
         const container = document.getElementById('recent-orders');
         if (!container) return;
@@ -503,6 +537,7 @@ class BumpaApp {
         this.closeAllModals();
         this.renderProductsPage();
         this.updateStats();
+        this.updateNotificationBadge();
     }
     
     deleteProduct(index) {
@@ -511,6 +546,7 @@ class BumpaApp {
             localStorage.setItem('products', JSON.stringify(this.products));
             this.renderProductsPage();
             this.updateStats();
+            this.updateNotificationBadge();
         }
     }
     
@@ -534,6 +570,7 @@ class BumpaApp {
         this.closeAllModals();
         this.renderOrdersPage();
         this.updateStats();
+        this.updateNotificationBadge();
     }
     
     addCustomer(e) {
@@ -557,6 +594,7 @@ class BumpaApp {
         this.closeAllModals();
         this.renderCustomersPage();
         this.updateStats();
+        this.updateNotificationBadge();
     }
     
     loadSampleData() {
