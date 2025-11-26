@@ -1247,14 +1247,14 @@ tr:last-child td {
     }
     
     th {
-        padding: -0.80rem 2rem;
+        padding: 0.2rem 0.3rem;
         font-size: 0.65rem;
         font-weight: 500;
     }
     
     td {
-        padding: -0.80rem 2rem;
-        font-size: 0.45rem;
+        padding: 0.2rem 0.3rem;
+        font-size: 0.65rem;
     }
     
     /* Hide Actions column on mobile */
