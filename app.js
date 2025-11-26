@@ -26,7 +26,8 @@ class BumpaApp {
             storeDomain: 'kokostore.bumpa.shop',
             businessName: 'Kokostore',
             businessEmail: 'contact@kokostore.com',
-            businessPhone: '+234 800 000 0000'
+            businessPhone: '+234 800 000 0000',
+            userName: 'Oyin'
         };
     }
     
@@ -399,7 +400,7 @@ class BumpaApp {
     updateMobileHeader() {
         const headerName = document.getElementById('mobile-header-name');
         if (headerName) {
-            headerName.textContent = this.settings.businessName || 'Kokostore';
+            headerName.textContent = 'Hi, ' + (this.settings.userName || 'Oyin');
         }
     }
     
