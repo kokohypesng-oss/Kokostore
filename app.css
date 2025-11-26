@@ -1727,6 +1727,61 @@ tr:last-child td {
     .content-area {
         padding: 1rem;
     }
+
+    /* Mobile: About Author Section */
+    .info-team-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-column {
+        grid-column: auto;
+    }
+
+    .team-column {
+        grid-column: auto;
+    }
+
+    .widget-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .title-underline {
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.4rem;
+    }
+
+    .inf_list {
+        gap: 1rem;
+    }
+
+    .inf_item a {
+        gap: 0.5rem;
+    }
+
+    .inf_icon {
+        font-size: 1rem;
+        min-width: 1rem;
+    }
+
+    .inf_text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .founder-name {
+        font-size: 1.25rem;
+    }
+
+    .founder-title {
+        font-size: 0.9rem;
+    }
+
+    .founder-card {
+        gap: 1rem;
+    }
 }
 
 /* Official Info & Team Section */
