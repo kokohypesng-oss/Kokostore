@@ -13,6 +13,16 @@
         <div class="mobile-header-greeting">
             <h2 id="mobile-header-name">Hi, Kokostore</h2>
             <p>Record a sale today <i class="fa-solid fa-cart-shopping"></i></p>
+            <div class="mobile-header-buttons">
+                <button class="mobile-header-btn" title="Visit Store">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Visit store</span>
+                </button>
+                <button class="mobile-header-btn" title="Share Link">
+                    <i class="fa-solid fa-share"></i>
+                    <span>Share link</span>
+                </button>
+            </div>
         </div>
         <div class="mobile-header-actions">
             <button class="mobile-header-action" title="Quick View" onclick="app.loadPage('products')">

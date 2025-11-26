@@ -73,6 +73,39 @@ body {
 .mobile-header-greeting p {
     font-size: 0.700rem;
     color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.mobile-header-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.mobile-header-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    border-radius: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mobile-header-btn:hover {
+    background: var(--gray-50);
+    border-color: var(--store-primary);
+    color: var(--store-primary);
+}
+
+.mobile-header-btn i {
+    font-size: 0.75rem;
 }
 
 .mobile-header-actions {
