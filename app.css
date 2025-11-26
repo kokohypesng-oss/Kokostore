@@ -64,14 +64,14 @@ body {
 }
 
 .mobile-header-greeting h2 {
-    font-size: 1.125rem;
+    font-size: 0.900rem;
     font-weight: 600;
     color: var(--gray-900);
     margin-bottom: 0.25rem;
 }
 
 .mobile-header-greeting p {
-    font-size: 0.875rem;
+    font-size: 0.700rem;
     color: var(--gray-600);
 }
 
@@ -82,8 +82,8 @@ body {
 }
 
 .mobile-header-action {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: var(--gray-100);
     border: none;
@@ -277,7 +277,7 @@ body {
     padding: 0.5rem 1rem 0.5rem 2.5rem;
     border: 1px solid var(--gray-300);
     border-radius: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.700rem;
 }
 
 .search-icon {
@@ -346,15 +346,16 @@ body {
 }
 
 .page-title {
-    font-size: 1.875rem;
+    font-size: 1.175rem;
     font-weight: 700;
     color: var(--gray-900);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 .page-subtitle {
     color: var(--gray-600);
-    font-size: 0.875rem;
+    font-size: 0.675rem;
+    margin-top: -0.3rem;
 }
 
 .stats-grid {
@@ -401,7 +402,7 @@ body {
 }
 
 .stat-change {
-    font-size: 0.875rem;
+    font-size: 0.700rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -424,8 +425,8 @@ body {
 }
 
 .card-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--gray-200);
+    padding: 0;
+    border-bottom: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -434,13 +435,13 @@ body {
 }
 
 .card-title {
-    font-size: 1.125rem;
+    font-size: 1.175rem;
     font-weight: 600;
     color: var(--gray-900);
 }
 
 .card-body {
-    padding: 1.5rem;
+    padding: 1.2rem;
     overflow-x: auto;
 }
 
@@ -448,7 +449,7 @@ body {
     padding: 0.625rem 1.25rem;
     border-radius: 0.5rem;
     font-weight: 500;
-    font-size: 0.875rem;
+    font-size: 0.700rem;
     cursor: pointer;
     border: none;
     display: inline-flex;
@@ -505,27 +506,38 @@ thead {
     background: var(--gray-50);
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 th {
     text-align: left;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     font-weight: 600;
     color: var(--gray-700);
-    font-size: 0.875rem;
-    border-bottom: 2px solid var(--gray-200);
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--gray-200);
     white-space: nowrap;
+    letter-spacing: 0.3px;
 }
 
 td {
-    padding: 1rem;
-    border-bottom: 1px solid var(--gray-200);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--gray-100);
     color: var(--gray-900);
-    font-size: 0.875rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: var(--gray-50);
 }
 
 tr:last-child td {
-    border-bottom: none;
+    border-bottom: 1px solid var(--gray-100);
 }
 
 .badge-pill {
@@ -820,15 +832,15 @@ tr:last-child td {
 }
 
 .mobile-footer-nav-icon {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .mobile-footer-nav-label {
-    font-size: 0.625rem;
+    font-size: 0.700rem;
     font-weight: 500;
     text-align: center;
 }
@@ -886,7 +898,7 @@ tr:last-child td {
         flex-direction: column;
         font-size: 0.75rem;
         border-left: none;
-        border-bottom: 3px solid transparent;
+        border-bottom: 0px solid transparent;
     }
     
     .nav-item.active {
@@ -910,7 +922,7 @@ tr:last-child td {
     }
     
     .page-title {
-        font-size: 1.5rem;
+        font-size: 1.175rem;
     }
     
     .top-bar {
@@ -932,7 +944,7 @@ tr:last-child td {
     }
     
     .color-palette {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     
     .top-bar-actions .icon-btn:not(:last-child) {
@@ -997,7 +1009,7 @@ tr:last-child td {
 }
 
 .products-empty-title {
-    font-size: 1.25rem;
+    font-size: 1.175rem;
     font-weight: 600;
     color: var(--gray-900);
     margin-bottom: 0.5rem;
@@ -1027,9 +1039,8 @@ tr:last-child td {
 
 /* Total Sales Card Upgrade */
 .total-sales-card {
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-    border: 1px solid var(--gray-200);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: none;
+    border: none;
 }
 
 .total-sales-body {
@@ -1042,7 +1053,7 @@ tr:last-child td {
 }
 
 .total-sales-value {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--store-primary);
     margin-bottom: 0;
@@ -1050,7 +1061,7 @@ tr:last-child td {
 
 .total-sales-change {
     color: var(--gray-600);
-    font-size: 0.875rem;
+    font-size: 0.775rem;
     font-weight: 500;
 }
 
@@ -1060,13 +1071,13 @@ tr:last-child td {
 }
 
 .period-dropdown {
-    padding: 0.625rem 0.875rem;
+    padding: 0.625rem 0.625rem;
     border: 1px solid var(--gray-300);
     background: var(--white);
     color: var(--gray-700);
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: 0.750rem;
     font-weight: 500;
     transition: all 0.3s ease;
     appearance: none;
@@ -1075,6 +1086,7 @@ tr:last-child td {
     background-position: right 0.5rem center;
     background-size: 1.25em 1.25em;
     padding-right: 2rem;
+    margin-right: 5.1rem;
 }
 
 .period-dropdown:hover {
@@ -1119,7 +1131,8 @@ tr:last-child td {
 .metric-label {
     font-size: 0.400rem;
     color: var(--gray-600);
-    margin-bottom: 0rem;
+    margin-top: 1rem;
+    margin-bottom: -0.2rem;
     font-weight: 500;
 }
 
@@ -1127,7 +1140,7 @@ tr:last-child td {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--store-primary);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.6rem;
 }
 
 .metric-change {
@@ -1196,13 +1209,13 @@ tr:last-child td {
     }
     
     th {
-        padding: 0.175rem;
-        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.700rem;
     }
     
     td {
-        padding: 0.175rem;
-        font-size: 0.7rem;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.7008rem;
     }
     
     /* Hide Actions column on tablet/mobile */
@@ -1217,7 +1230,7 @@ tr:last-child td {
     }
     
     .card-body {
-        padding: 0.5rem;
+        padding: 0rem;
     }
 }
 
@@ -1225,8 +1238,8 @@ tr:last-child td {
     .table-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        margin: 0;
-        padding: 0;
+        margin: 30px 0px 0px 0px;
+        padding: 10px;
     }
     
     table {
@@ -1235,14 +1248,14 @@ tr:last-child td {
     }
     
     th {
-        padding: 0.25rem 0.175rem;
+        padding: -0.80rem 2rem;
         font-size: 0.65rem;
         font-weight: 500;
     }
     
     td {
-        padding: 0.25rem 0.175rem;
-        font-size: 0.65rem;
+        padding: -0.80rem 2rem;
+        font-size: 0.45rem;
     }
     
     /* Hide Actions column on mobile */

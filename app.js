@@ -174,10 +174,6 @@ class BumpaApp {
     }
     
     updateSalesPeriod(period) {
-        // Update filter buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        document.querySelector(`[data-period="${period}"]`).classList.add('active');
-        
         // In a real app, this would filter data by date range
         const totalSales = this.orders.reduce((sum, order) => sum + parseFloat(order.total || 0), 0);
         document.getElementById('total-sales').textContent = '₦' + totalSales.toLocaleString();
