@@ -175,6 +175,43 @@
                             <button class="btn btn-primary" onclick="app.generateDailyReport()" style="padding: 0.75rem 2rem; font-weight: 600;">Generate Daily Report</button>
                         </div>
                         
+                        <!-- 4a. Quick Actions Section -->
+                        <div class="quick-actions-section">
+                            <h3 class="quick-actions-title">Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn quick-action-yellow" title="Add Product">
+                                    <div class="quick-action-icon-circle">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <span>Add Product</span>
+                                </button>
+                                <button class="quick-action-btn quick-action-blue" title="Add Order">
+                                    <div class="quick-action-icon-circle">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </div>
+                                    <span>Add Order</span>
+                                </button>
+                                <button class="quick-action-btn quick-action-teal" title="Add Customer">
+                                    <div class="quick-action-icon-circle">
+                                        <i class="fa-solid fa-user-plus"></i>
+                                    </div>
+                                    <span>Add Customer</span>
+                                </button>
+                                <button class="quick-action-btn quick-action-purple" title="Create Invoice">
+                                    <div class="quick-action-icon-circle">
+                                        <i class="fa-solid fa-file-invoice"></i>
+                                    </div>
+                                    <span>Create Invoice</span>
+                                </button>
+                                <button class="quick-action-btn quick-action-orange" title="Add Expense">
+                                    <div class="quick-action-icon-circle">
+                                        <i class="fa-solid fa-money-bill-wave"></i>
+                                    </div>
+                                    <span>Add Expense</span>
+                                </button>
+                            </div>
+                        </div>
+                        
                         <!-- 5. Website Summary (Mobile) -->
                         <div class="website-summary-section">
                             <h3 class="website-summary-title">Website Summary</h3>
