@@ -11,7 +11,7 @@
     <!-- Mobile Header -->
     <div class="mobile-header">
         <div class="mobile-header-greeting">
-            <h2 id="mobile-header-name">Hi, Kokostore</h2>
+            <h2 id="mobile-header-name"><span class="active-indicator"></span>Hi, Kokostore</h2>
             <p>Record a sale today <i class="fa-solid fa-cart-shopping"></i></p>
             <div class="mobile-header-buttons">
                 <button class="mobile-header-btn" title="Visit Store">
