@@ -532,11 +532,15 @@ tr:last-child td {
 }
 
 .badge-pill {
-    padding: 0.25rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     border-radius: 999px;
     font-size: 0.75rem;
     font-weight: 600;
     display: inline-block;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .badge-success {
@@ -552,6 +556,11 @@ tr:last-child td {
 .badge-danger {
     background: #FEE2E2;
     color: #DC2626;
+}
+
+.badge-info {
+    background: #DBEAFE;
+    color: #1E40AF;
 }
 
 .quick-actions {
