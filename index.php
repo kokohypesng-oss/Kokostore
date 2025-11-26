@@ -216,28 +216,40 @@
                         <div class="slider-container">
                             <div class="slider-wrapper">
                                 <div class="slider-track">
-                                    <div class="slider-slide active" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                                    <div class="slider-slide active" style="background-image: url('attached_assets/stock_images/e-commerce_promotion_65827025.jpg'); background-size: cover; background-position: center;">
+                                        <div class="slide-overlay"></div>
                                         <div class="slide-content">
-                                            <h3>New Products</h3>
-                                            <p>Discover our latest collection</p>
+                                            <p class="slide-title">Introducing</p>
+                                            <h2 class="slide-subtitle">Kokostore makes growth and advancement to your business</h2>
+                                            <p class="slide-description">Transform your e-commerce business with our comprehensive platform. Manage inventory, track orders, engage customers, and grow your sales effortlessly. Kokostore provides all the tools you need to scale your business efficiently and profitably. Start today......</p>
+                                            <button class="btn btn-primary slide-read-more">Read More</button>
                                         </div>
                                     </div>
-                                    <div class="slider-slide" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
+                                    <div class="slider-slide" style="background-image: url('attached_assets/stock_images/e-commerce_promotion_79036d95.jpg'); background-size: cover; background-position: center;">
+                                        <div class="slide-overlay"></div>
                                         <div class="slide-content">
-                                            <h3>Summer Sale</h3>
-                                            <p>Get up to 50% off today</p>
+                                            <p class="slide-title">Introducing</p>
+                                            <h2 class="slide-subtitle">Boost sales with smart inventory management tools</h2>
+                                            <p class="slide-description">Keep track of every product in real-time with our advanced inventory system. Never miss a sale opportunity due to stockouts. Monitor low stock alerts, manage product variants, and optimize your inventory levels automatically. Our smart system helps you maintain the perfect balance......</p>
+                                            <button class="btn btn-primary slide-read-more">Read More</button>
                                         </div>
                                     </div>
-                                    <div class="slider-slide" style="background: linear-gradient(135deg, #A855F7 0%, #7C3AED 100%);">
+                                    <div class="slider-slide" style="background-image: url('attached_assets/stock_images/e-commerce_promotion_71290c8c.jpg'); background-size: cover; background-position: center;">
+                                        <div class="slide-overlay"></div>
                                         <div class="slide-content">
-                                            <h3>Free Shipping</h3>
-                                            <p>On orders over ₦10,000</p>
+                                            <p class="slide-title">Introducing</p>
+                                            <h2 class="slide-subtitle">Connect with customers and increase loyalty</h2>
+                                            <p class="slide-description">Build lasting relationships with your customers through personalized communication and rewards. Track customer behavior, manage preferences, and create targeted campaigns that convert. Our customer relationship tools help you understand buying patterns and deliver exceptional service every time......</p>
+                                            <button class="btn btn-primary slide-read-more">Read More</button>
                                         </div>
                                     </div>
-                                    <div class="slider-slide" style="background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">
+                                    <div class="slider-slide" style="background-image: url('attached_assets/stock_images/e-commerce_promotion_1d3d3b99.jpg'); background-size: cover; background-position: center;">
+                                        <div class="slide-overlay"></div>
                                         <div class="slide-content">
-                                            <h3>Member Exclusive</h3>
-                                            <p>Join now and save more</p>
+                                            <p class="slide-title">Introducing</p>
+                                            <h2 class="slide-subtitle">Analytics and insights to drive smart decisions</h2>
+                                            <p class="slide-description">Get detailed analytics on your business performance with comprehensive reports and visualizations. Track revenue, orders, customer trends, and growth metrics in real-time. Make data-driven decisions that accelerate your business growth and maximize profitability. Transform raw data into actionable insights......</p>
+                                            <button class="btn btn-primary slide-read-more">Read More</button>
                                         </div>
                                     </div>
                                 </div>
