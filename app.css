@@ -1807,9 +1807,10 @@ tr:last-child td {
 }
 
 .info-column .widget {
-    background: transparent;
-    border: none;
-    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 .team-column {
