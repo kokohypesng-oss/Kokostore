@@ -511,33 +511,24 @@ thead {
 
 th {
     text-align: left;
-    padding: 0.75rem 1rem;
+    padding: 0.3rem 0.5rem;
     font-weight: 600;
     color: var(--gray-700);
-    font-size: 0.8rem;
-    border-bottom: 1px solid var(--gray-200);
+    font-size: 0.700rem;
+    border-bottom: 2px solid var(--gray-200);
     white-space: nowrap;
-    letter-spacing: 0.3px;
 }
 
 td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--gray-100);
+    padding: 0.35rem 0.5rem;
+    border-bottom: 1px solid var(--gray-200);
     color: var(--gray-900);
-    font-size: 0.8rem;
+    font-size: 0.700rem;
     white-space: nowrap;
 }
 
-tbody tr {
-    transition: background-color 0.2s ease;
-}
-
-tbody tr:hover {
-    background-color: var(--gray-50);
-}
-
 tr:last-child td {
-    border-bottom: 1px solid var(--gray-100);
+    border-bottom: none;
 }
 
 .badge-pill {
