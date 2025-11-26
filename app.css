@@ -1772,11 +1772,11 @@ tr:last-child td {
     }
 
     .founder-name {
-        font-size: 1.25rem;
+        font-size: 0.775rem;
     }
 
     .founder-title {
-        font-size: 0.9rem;
+        font-size: 0.550rem;
     }
 
     .founder-card {
@@ -1803,6 +1803,13 @@ tr:last-child td {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 100%;
+}
+
+.info-column .widget {
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .team-column {
@@ -1810,6 +1817,7 @@ tr:last-child td {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: 100%;
 }
 
 .widget {
@@ -1900,7 +1908,7 @@ tr:last-child td {
 }
 
 .founder-name {
-    font-size: 1.5rem;
+    font-size: 0.775rem;
     font-weight: 800;
     color: var(--gray-900);
     margin: 0;
@@ -1908,7 +1916,7 @@ tr:last-child td {
 }
 
 .founder-title {
-    font-size: 1rem;
+    font-size: 0.550rem;
     color: var(--store-primary);
     margin: 0;
     font-weight: 600;
