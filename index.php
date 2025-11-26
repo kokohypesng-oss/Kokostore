@@ -299,15 +299,10 @@
                                 </div>
                             </aside>
 
-                            <!-- Right Column: Photo Album & Team -->
+                            <!-- Right Column: Founder Passport -->
                             <div class="team-column">
-                                <div class="photo-album">
-                                    <img src="attached_assets/stock_images/professional_busines_6164952e.jpg" alt="Team member 1" class="album-photo">
-                                    <img src="attached_assets/stock_images/professional_busines_70c4bb68.jpg" alt="Team member 2" class="album-photo">
-                                    <img src="attached_assets/stock_images/professional_busines_1c12f165.jpg" alt="Team member 3" class="album-photo">
-                                    <img src="attached_assets/stock_images/professional_busines_f08a0348.jpg" alt="Team member 4" class="album-photo">
-                                </div>
                                 <div class="founder-card">
+                                    <img src="attached_assets/stock_images/professional_busines_6164952e.jpg" alt="Founder" class="founder-photo">
                                     <h3 class="founder-name">Adeyanju ADEOYE</h3>
                                     <p class="founder-title">Organisation founder and MD</p>
                                 </div>
