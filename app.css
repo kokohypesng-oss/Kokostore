@@ -78,8 +78,14 @@ body {
     height: 8px;
     background: var(--store-primary);
     border-radius: 50%;
-    display: inline-block;
+    display: none;
     animation: blink 1s infinite;
+}
+
+@media (max-width: 780px) {
+    .active-indicator {
+        display: inline-block;
+    }
 }
 
 @keyframes blink {
