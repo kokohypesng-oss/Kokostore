@@ -1267,7 +1267,6 @@ tr:last-child td {
 }
 
 .metric-box {
-    background: white;
     border: 1px solid var(--gray-200);
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -1278,6 +1277,22 @@ tr:last-child td {
     align-items: center;
     text-align: center;
     transition: all 0.3s ease;
+}
+
+.metric-box:nth-child(1) {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 100%);
+}
+
+.metric-box:nth-child(2) {
+    background: linear-gradient(45deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.01) 100%);
+}
+
+.metric-box:nth-child(3) {
+    background: linear-gradient(225deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.02) 100%);
+}
+
+.metric-box:nth-child(4) {
+    background: linear-gradient(315deg, rgba(16, 185, 129, 0.06) 0%, rgba(16, 185, 129, 0.01) 100%);
 }
 
 .metric-box:hover {
