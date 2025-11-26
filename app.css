@@ -64,16 +64,16 @@ body {
 }
 
 .mobile-header-greeting h2 {
-    font-size: 1.175rem;
-    font-weight: 900;
+    font-size: 0.875rem;
+    font-weight: 600;
     color: var(--gray-900);
-    margin-bottom: 0rem;
+    margin-bottom: -0.1rem;
 }
 
 .mobile-header-greeting p {
-    font-size: 0.700rem;
-    color: var(--gray-600);
-    margin-bottom: 0.5rem;
+    font-size: 0.550rem;
+    color: var(--store-primary);
+    margin-bottom: 0.4rem;
 }
 
 .mobile-header-buttons {

@@ -11,7 +11,7 @@
     <!-- Mobile Header -->
     <div class="mobile-header">
         <div class="mobile-header-greeting">
-            <h2 id="mobile-header-name">Hi, Adeyanju</h2>
+            <h2 id="mobile-header-name">Hi, Adeoye</h2>
             <p>Welcome back, we are happy to see you again<i class="fa-solid fa-handwave"></i></p>
             <div class="mobile-header-buttons">
                 <button class="mobile-header-btn" title="Visit Store">
