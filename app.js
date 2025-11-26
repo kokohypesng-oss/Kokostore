@@ -33,12 +33,14 @@ class BumpaApp {
     }
     
     init() {
+        this.currentSlide = 0;
         this.setupEventListeners();
         this.applyTheme();
         this.updateMobileHeader();
         this.loadPage('home');
         this.updateStats();
         this.updateNotificationBadge();
+        this.startSliderAutoplay();
         
         if (this.products.length === 0) {
             this.loadSampleData();
@@ -460,6 +462,48 @@ class BumpaApp {
                 badge.style.display = 'none';
             }
         });
+    }
+    
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % 4;
+        this.updateSlider();
+    }
+    
+    prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + 4) % 4;
+        this.updateSlider();
+    }
+    
+    goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlider();
+    }
+    
+    updateSlider() {
+        const track = document.querySelector('.slider-track');
+        if (track) {
+            track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+        }
+        
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            if (index === this.currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        if (this.sliderInterval) {
+            clearInterval(this.sliderInterval);
+        }
+        this.startSliderAutoplay();
+    }
+    
+    startSliderAutoplay() {
+        this.sliderInterval = setInterval(() => {
+            this.nextSlide();
+        }, 5000);
     }
     
     renderRecentOrders() {

@@ -419,7 +419,7 @@ body {
 .page-subtitle {
     color: var(--gray-600);
     font-size: 0.675rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .stats-grid {
@@ -484,7 +484,7 @@ body {
     background: var(--white);
     border-radius: 0.75rem;
     border: 1px solid var(--gray-200);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     overflow: hidden;
 }
 
@@ -500,7 +500,7 @@ body {
 
 .card-title {
     font-size: 0.775rem;
-    font-weight: 200;
+    font-weight: 400;
     color: var(--gray-900);
 }
 
@@ -675,7 +675,7 @@ tr:last-child td {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .color-option {
@@ -763,7 +763,7 @@ tr:last-child td {
 }
 
 .form-group {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .form-label {
@@ -819,6 +819,107 @@ tr:last-child td {
 }
 
 /* Responsive */
+.slider-container {
+    margin-bottom: 1.5rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-slide {
+    min-width: 100%;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.slide-content {
+    text-align: center;
+}
+
+.slide-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.slide-content p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-900);
+    transition: all 0.2s;
+    z-index: 10;
+    font-size: 1rem;
+}
+
+.slider-btn:hover {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.slider-prev {
+    left: 1rem;
+}
+
+.slider-next {
+    right: 1rem;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--gray-300);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: var(--store-primary);
+    width: 30px;
+    border-radius: 5px;
+}
+
+.dot:hover {
+    background: var(--store-primary);
+}
+
 @media (max-width: 1024px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1300,21 +1401,6 @@ tr:last-child td {
     margin-bottom: 1.5rem;
 }
 
-/* Home Page Redesign */
-.home-banner {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-    border-radius: 0.5rem;
-}
-
-.banner-image {
-    width: 100%;
-    height: 70px;
-    object-fit: cover;
-    display: block;
-}
 
 /* Total Sales Card Upgrade */
 .total-sales-card {
@@ -1382,7 +1468,7 @@ tr:last-child td {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
 
@@ -1446,12 +1532,13 @@ tr:last-child td {
 
 /* Responsive adjustments */
 @media (max-width: 780px) {
-    .home-banner {
-        height: 120px;
-    }
-    
     .banner-image {
-        height: 120px;
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
     }
     
     .metrics-container {
@@ -1463,7 +1550,7 @@ tr:last-child td {
         height: 60px;
         padding: 1rem;
     }
-    
+
 }
 
 /* Font Awesome Icon Sizing - Increase by 10px */
