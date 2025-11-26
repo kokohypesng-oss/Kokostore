@@ -128,50 +128,6 @@
                             <img src="professional_e-comme_24a4667a.jpg" alt="E-commerce Dashboard Banner" class="banner-image">
                         </div>
                         
-                        <!-- 1a. Slider Widget -->
-                        <div class="slider-container">
-                            <div class="slider-wrapper">
-                                <div class="slider-track">
-                                    <div class="slider-slide active" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
-                                        <div class="slide-content">
-                                            <h3>New Products</h3>
-                                            <p>Discover our latest collection</p>
-                                        </div>
-                                    </div>
-                                    <div class="slider-slide" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
-                                        <div class="slide-content">
-                                            <h3>Summer Sale</h3>
-                                            <p>Get up to 50% off today</p>
-                                        </div>
-                                    </div>
-                                    <div class="slider-slide" style="background: linear-gradient(135deg, #A855F7 0%, #7C3AED 100%);">
-                                        <div class="slide-content">
-                                            <h3>Free Shipping</h3>
-                                            <p>On orders over ₦10,000</p>
-                                        </div>
-                                    </div>
-                                    <div class="slider-slide" style="background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">
-                                        <div class="slide-content">
-                                            <h3>Member Exclusive</h3>
-                                            <p>Join now and save more</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="slider-btn slider-prev" onclick="app.prevSlide()">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn slider-next" onclick="app.nextSlide()">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-                            </div>
-                            <div class="slider-dots">
-                                <button class="dot active" onclick="app.goToSlide(0)"></button>
-                                <button class="dot" onclick="app.goToSlide(1)"></button>
-                                <button class="dot" onclick="app.goToSlide(2)"></button>
-                                <button class="dot" onclick="app.goToSlide(3)"></button>
-                            </div>
-                        </div>
-                        
                         <!-- 2. Total Sales Section with Filter -->
                         <div class="card total-sales-card" style="margin-bottom: 1.5rem;">
                             <div class="card-header">
@@ -253,6 +209,50 @@
                                     </div>
                                     <span>Add Expense</span>
                                 </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 4b. Slider Widget -->
+                        <div class="slider-container">
+                            <div class="slider-wrapper">
+                                <div class="slider-track">
+                                    <div class="slider-slide active" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                                        <div class="slide-content">
+                                            <h3>New Products</h3>
+                                            <p>Discover our latest collection</p>
+                                        </div>
+                                    </div>
+                                    <div class="slider-slide" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
+                                        <div class="slide-content">
+                                            <h3>Summer Sale</h3>
+                                            <p>Get up to 50% off today</p>
+                                        </div>
+                                    </div>
+                                    <div class="slider-slide" style="background: linear-gradient(135deg, #A855F7 0%, #7C3AED 100%);">
+                                        <div class="slide-content">
+                                            <h3>Free Shipping</h3>
+                                            <p>On orders over ₦10,000</p>
+                                        </div>
+                                    </div>
+                                    <div class="slider-slide" style="background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);">
+                                        <div class="slide-content">
+                                            <h3>Member Exclusive</h3>
+                                            <p>Join now and save more</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn slider-prev" onclick="app.prevSlide()">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn slider-next" onclick="app.nextSlide()">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots">
+                                <button class="dot active" onclick="app.goToSlide(0)"></button>
+                                <button class="dot" onclick="app.goToSlide(1)"></button>
+                                <button class="dot" onclick="app.goToSlide(2)"></button>
+                                <button class="dot" onclick="app.goToSlide(3)"></button>
                             </div>
                         </div>
                         
