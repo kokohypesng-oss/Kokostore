@@ -268,41 +268,34 @@
                             </div>
                         </div>
                         
-                        <!-- 5. Website Summary (Mobile) -->
-                        <div class="website-summary-section">
-                            <h3 class="website-summary-title">Website Summary</h3>
-                            <div class="website-summary-grid">
-                                <div class="website-summary-card">
-                                    <div class="website-summary-icon">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </div>
-                                    <div class="website-summary-content">
-                                        <div class="website-summary-label">Store Views</div>
-                                        <div class="website-summary-value" id="website-views">2,340</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="website-summary-card">
-                                    <div class="website-summary-icon">
-                                        <i class="fa-solid fa-circle"></i>
-                                    </div>
-                                    <div class="website-summary-content">
-                                        <div class="website-summary-label">Website Status</div>
-                                        <div class="website-summary-value website-status-online" id="website-status">Online</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="website-summary-card">
-                                    <div class="website-summary-icon">
-                                        <i class="fa-solid fa-link"></i>
-                                    </div>
-                                    <div class="website-summary-content">
-                                        <div class="website-summary-label">Store Link</div>
-                                        <div class="website-summary-value website-link" id="website-link">kokostore.bumpa.shop</div>
-                                    </div>
-                                </div>
+                        <!-- 5. Official Info Widget -->
+                        <aside class="widget widget_block">
+                            <h5 class="widget-title">Official Info</h5>
+                            <div class="wp-widget-group__inner-blocks">
+                                <ol class="list_none inf_list">
+                                    <li>
+                                        <a href="#">
+                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-map-marker-alt"></i> <span>22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-map-marker-alt"></i> <span>Abule Otun Junction, Owode-Mowe <br>Motor Road, Owode Egba Ogun State.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-phone-alt"></i> <span>+2348107016971</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-phone-alt"></i><span>odunayodamilola1995@gmail.com</span>
+                                        </a>
+                                    </li>
+                                </ol>
                             </div>
-                        </div>
+                        </aside>
                     </div>
                     
                     <!-- Products Page -->
