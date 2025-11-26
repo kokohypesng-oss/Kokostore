@@ -11,9 +11,10 @@ I prefer simple language and detailed explanations. I want iterative development
 ### UI/UX Decisions
 The platform features a clean, minimalist, and modern design inspired by Bumpa, utilizing a card-based layout for content organization. It implements a responsive design optimized for mobile (780px and below), tablet, and desktop views. Key UI elements include:
 - **Mobile-first approach:** Header with quick action icons, professional greeting, and a fixed footer navigation bar with 5 icons for easy access.
-- **Desktop/Tablet:** Sidebar navigation, horizontal header navigation, and a multi-column metrics grid.
+- **Desktop/Tablet:** Sidebar navigation, horizontal header navigation with logo and menu items, and a multi-column metrics grid.
 - **Customizable Themes:** 6 professional color schemes are available, allowing instant theme application across all UI components via CSS variables for brand consistency.
-- **Dashboard:** Features a gradient banner, total sales analytics with period filters, 4 key metric boxes, a daily report generation button, and 4 analytics sliders with visual bar charts for 6-day trend visualization.
+- **Dashboard:** Features a gradient banner, upgraded total sales card with horizontal value/change layout, period filter dropdown, 4 key metric boxes, a daily report generation button.
+- **Professional Tables:** Compact, Shopify/Airtable-style tables with subtle hover effects, optimized badge pills for status indicators, and responsive column handling.
 - **Product Management:** Tab navigation for Products and Collections, search functionality, filtering options (All, Published, Unpublished), and empty states with call-to-actions.
 
 ### Technical Implementations
@@ -23,10 +24,10 @@ The platform features a clean, minimalist, and modern design inspired by Bumpa, 
 - **Performance:** Designed to be lightweight with vanilla JavaScript and a minimal CSS bundle, ensuring fast page loads and smooth transitions.
 
 ### Feature Specifications
-- **Dashboard:** Real-time sales display, period-based filtering (Today, Week, Month), 4 key performance indicators (Updating Orders, Products Sold, New Customers, Website Visits), and visual trend analytics for revenue, orders, customer growth, and traffic.
-- **Products/Inventory Management:** Add, edit, delete products; track SKU, price, stock levels; categorization; stock status indicators; real-time inventory updates.
-- **Orders Management:** Create, track, and manage order statuses (Pending, Completed, Cancelled); link customer information; track order history.
-- **Customer Relationship Management (CRM):** Comprehensive customer database with purchase history, total spending, and contact information.
+- **Dashboard:** Real-time sales display, dropdown-based period filtering (Today, This Week, This Month), 4 key performance indicators (Updating Orders, Products Sold, New Customers, Website Visits), and horizontal sales metrics display.
+- **Products/Inventory Management:** Add, edit, delete products; track SKU, price, stock levels; categorization; stock status indicators; real-time inventory updates with professional table display.
+- **Orders Management:** Create, track, and manage order statuses (Pending, Completed, Cancelled); link customer information; track order history with compact, professional tables.
+- **Customer Relationship Management (CRM):** Comprehensive customer database with purchase history, total spending, and contact information in organized tables.
 - **Analytics & Reporting:** Tracks revenue trends, average order value, conversion rates, and customer retention metrics.
 - **Settings & More:** Store color selection, custom store domain configuration, business information management, payment settings, notifications, and account settings.
 
@@ -35,13 +36,18 @@ The platform features a clean, minimalist, and modern design inspired by Bumpa, 
 - **Modular JavaScript:** `BumpaApp` class encapsulates core functionalities for maintainability.
 - **CSS Variable Theming:** Enables dynamic and instant theme switching.
 - **Local Persistence:** Utilizes `LocalStorage` for immediate data persistence without server-side dependencies for core features.
+- **Desktop Header Navigation:** Visible on desktop (1024px+), hidden on tablet/mobile with dropdown-controlled sales period filters.
+- **Professional Table Styling:** Compact padding (0.35rem 0.5rem for cells), subtle borders, hover effects, and optimized badge pills (0.2rem 0.5rem padding, 0.65rem font size).
 
-## Recent Changes (November 24, 2025)
-- **Font Awesome Icon Update:** All 18 icons updated to use `fa-thin` style with `fa-bounce` animation, increased size by 10px (1.5rem) for better visibility across navigation, headers, and footers.
-- **Home Page Banner Redesign:** Title and subtitle moved above the banner to separate page header from visual banner. Banner now displays as a 100% width × 100px height gradient SVG with centered welcome message. Banner uses store primary color gradient.
-- **Banner Image Structure:** Created SVG-based banner with gradient background (green gradient from primary to dark color) featuring centered white text "Welcome to Kokostore Dashboard".
-- **Mobile Optimizations:** Reduced font sizes (0.65rem on mobile), adjusted table padding, hidden product image cards on mobile view (480px and tablet 780px), centered footer navigation content, set footer nav width to 100%.
-- **Full-Width Body Optimization:** All layout containers (`body`, `.app-container`, `.app-main`, `.main-content`, `.content-area`) now set to `width: 100%` for optimal viewport usage across all pages.
+## Recent Changes (November 26, 2025)
+- **Desktop Header Navigation Fixed:** Desktop header nav bar now displays properly on large screens with logo and menu items (Home, Products, Orders, Customers, Analytics, Settings).
+- **Footer Navigation Optimization:** Mobile footer navigation now hidden on desktop and tablet views (1024px and above), only visible on mobile (780px and below).
+- **Total Sales Card Upgrade:** Enhanced with gradient background (white to light gray), increased typography size (3rem primary color), and professional styling with improved shadows.
+- **Period Filter Dropdown:** Converted from button-based filters to dropdown select menu with custom styling and arrow icon for cleaner interface.
+- **Horizontal Metrics Alignment:** Sales value and change percentage now arranged horizontally on a single line with proper centering and 1rem spacing.
+- **Professional Table Styling:** Tables now feature Shopify/Airtable-inspired compact design with reduced padding, subtle borders, row hover effects (light gray background).
+- **Badge Pills Optimization:** Compacted badge pills (padding: 0.2rem 0.5rem, font-size: 0.65rem, line-height: 1) to fit seamlessly in table cells without disrupting layout on any screen size. Added badge-info class for additional status options.
+- **JavaScript Error Resolution:** Fixed dropdown filter functionality that was causing "null reading classList" errors by updating updateSalesPeriod method.
 
 ## External Dependencies
 - Font Awesome 6.4.0 CDN (cdnjs.cloudflare.com) for icon library
