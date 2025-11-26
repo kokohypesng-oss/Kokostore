@@ -26,7 +26,8 @@
         </div>
         <div class="mobile-header-actions">
             <button class="mobile-header-action" title="Quick View" onclick="app.loadPage('products')">
-                <i class="fa-solid fa-eye"></i>
+                <i class="fa-solid fa-eye eye-icon"></i>
+                <i class="fa-solid fa-circle status-icon"></i>
             </button>
             <button class="mobile-header-action" title="Notifications">
                 <i class="fa-solid fa-bell"></i>

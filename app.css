@@ -132,6 +132,26 @@ body {
     background: var(--gray-200);
 }
 
+.eye-icon {
+    display: block;
+}
+
+.status-icon {
+    display: none;
+    color: var(--store-primary);
+    font-size: 0.5rem;
+}
+
+@media (max-width: 780px) {
+    .eye-icon {
+        display: none;
+    }
+    
+    .status-icon {
+        display: block;
+    }
+}
+
 /* App Main Layout */
 .app-main {
     display: flex;
