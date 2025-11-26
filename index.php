@@ -11,8 +11,8 @@
     <!-- Mobile Header -->
     <div class="mobile-header">
         <div class="mobile-header-greeting">
-            <h2 id="mobile-header-name">Hi, Kokostore</h2>
-            <p>Record a sale today <i class="fa-solid fa-cart-shopping"></i></p>
+            <h2 id="mobile-header-name">Hi, Adeyanju</h2>
+            <p>Welcome back, we are happy to see you again<i class="fa-solid fa-handwave"></i></p>
             <div class="mobile-header-buttons">
                 <button class="mobile-header-btn" title="Visit Store">
                     <i class="fa-solid fa-globe"></i>

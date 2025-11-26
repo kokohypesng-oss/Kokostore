@@ -400,7 +400,7 @@ class BumpaApp {
     updateMobileHeader() {
         const headerName = document.getElementById('mobile-header-name');
         if (headerName) {
-            headerName.textContent = 'Hi, ' + (this.settings.userName || 'Oyin');
+            headerName.textContent = this.settings.businessName || 'Kokostore';
         }
     }
     
