@@ -1811,6 +1811,14 @@ tr:last-child td {
     border: none !important;
     padding: 0 !important;
     box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.info-column .inf_list,
+.info-column .inf_item,
+.info-column .inf_item a {
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .team-column {
