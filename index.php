@@ -268,34 +268,51 @@
                             </div>
                         </div>
                         
-                        <!-- 5. Official Info Widget -->
-                        <aside class="widget widget_block">
-                            <h5 class="widget-title">Official Info</h5>
-                            <div class="wp-widget-group__inner-blocks">
-                                <div class="inf_list">
-                                    <div class="inf_item">
-                                        <a href="#">
-                                            <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
-                                        </a>
-                                    </div>
-                                    <div class="inf_item">
-                                        <a href="#">
-                                            <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">Abule Otun Junction, Owode-Mowe <br>Motor Road, Owode Egba Ogun State.</span>
-                                        </a>
-                                    </div>
-                                    <div class="inf_item">
-                                        <a href="#">
-                                            <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">+2348107016971</span>
-                                        </a>
-                                    </div>
-                                    <div class="inf_item">
-                                        <a href="#">
-                                            <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">odunayodamilola1995@gmail.com</span>
-                                        </a>
+                        <!-- 5. Official Info & Team Section -->
+                        <div class="info-team-container">
+                            <!-- Left Column: Official Info -->
+                            <aside class="widget widget_block info-column">
+                                <h5 class="widget-title"><span class="title-underline">Official</span> Info</h5>
+                                <div class="wp-widget-group__inner-blocks">
+                                    <div class="inf_list">
+                                        <div class="inf_item">
+                                            <a href="#">
+                                                <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
+                                            </a>
+                                        </div>
+                                        <div class="inf_item">
+                                            <a href="#">
+                                                <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">Abule Otun Junction, Owode-Mowe <br>Motor Road, Owode Egba Ogun State.</span>
+                                            </a>
+                                        </div>
+                                        <div class="inf_item">
+                                            <a href="#">
+                                                <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">+2348107016971</span>
+                                            </a>
+                                        </div>
+                                        <div class="inf_item">
+                                            <a href="#">
+                                                <i aria-hidden="true" class="inf_icon fas fa-envelope"></i><span class="inf_text">odunayodamilola1995@gmail.com</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
+                            </aside>
+
+                            <!-- Right Column: Photo Album & Team -->
+                            <div class="team-column">
+                                <div class="photo-album">
+                                    <img src="attached_assets/stock_images/professional_busines_6164952e.jpg" alt="Team member 1" class="album-photo">
+                                    <img src="attached_assets/stock_images/professional_busines_70c4bb68.jpg" alt="Team member 2" class="album-photo">
+                                    <img src="attached_assets/stock_images/professional_busines_1c12f165.jpg" alt="Team member 3" class="album-photo">
+                                    <img src="attached_assets/stock_images/professional_busines_f08a0348.jpg" alt="Team member 4" class="album-photo">
+                                </div>
+                                <div class="founder-card">
+                                    <h3 class="founder-name">Adeyanju ADEOYE</h3>
+                                    <p class="founder-title">Organisation founder and MD</p>
+                                </div>
                             </div>
-                        </aside>
+                        </div>
                     </div>
                     
                     <!-- Products Page -->
