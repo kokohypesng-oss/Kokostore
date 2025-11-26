@@ -847,6 +847,13 @@ tr:last-child td {
     color: white;
 }
 
+.slider-title,
+.slider-subtitle,
+.slider-description {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9),
+                 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
 .slide-overlay {
     position: absolute;
     top: 0;
