@@ -1302,7 +1302,7 @@ tr:last-child td {
 
 .metric-label {
     font-size: 0.400rem;
-    color: var(--gray-600);
+    color: var(--gray-900);
     margin-top: 1rem;
     margin-bottom: -0.2rem;
     font-weight: 500;
@@ -1313,6 +1313,7 @@ tr:last-child td {
     font-weight: 700;
     color: var(--store-primary);
     margin-bottom: 0.6rem;
+    color: var(--gray-900);
 }
 
 .metric-change {
