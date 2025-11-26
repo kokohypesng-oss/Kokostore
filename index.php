@@ -171,6 +171,42 @@
                         <div style="margin: 1.5rem 0; text-align: center;">
                             <button class="btn btn-primary" onclick="app.generateDailyReport()" style="padding: 0.75rem 2rem; font-weight: 600;">Generate Daily Report</button>
                         </div>
+                        
+                        <!-- 5. Website Summary (Mobile) -->
+                        <div class="website-summary-section">
+                            <h3 class="website-summary-title">Website Summary</h3>
+                            <div class="website-summary-grid">
+                                <div class="website-summary-card">
+                                    <div class="website-summary-icon">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </div>
+                                    <div class="website-summary-content">
+                                        <div class="website-summary-label">Store Views</div>
+                                        <div class="website-summary-value" id="website-views">2,340</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="website-summary-card">
+                                    <div class="website-summary-icon">
+                                        <i class="fa-solid fa-circle"></i>
+                                    </div>
+                                    <div class="website-summary-content">
+                                        <div class="website-summary-label">Website Status</div>
+                                        <div class="website-summary-value website-status-online" id="website-status">Online</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="website-summary-card">
+                                    <div class="website-summary-icon">
+                                        <i class="fa-solid fa-link"></i>
+                                    </div>
+                                    <div class="website-summary-content">
+                                        <div class="website-summary-label">Store Link</div>
+                                        <div class="website-summary-value website-link" id="website-link">kokostore.bumpa.shop</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Products Page -->

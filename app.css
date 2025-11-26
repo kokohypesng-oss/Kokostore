@@ -938,6 +938,90 @@ tr:last-child td {
     }
 }
 
+/* Website Summary Section */
+.website-summary-section {
+    display: none;
+    margin-top: 2rem;
+}
+
+.website-summary-title {
+    font-size: 1.175rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.website-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.website-summary-card {
+    background: var(--white);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.website-summary-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--store-light);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--store-primary);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.website-summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.website-summary-label {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.website-summary-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    word-break: break-word;
+}
+
+.website-status-online {
+    color: var(--store-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.website-status-online::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--store-primary);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.website-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
 @media (max-width: 480px) {
     .quick-actions {
         grid-template-columns: 1fr;
@@ -949,6 +1033,16 @@ tr:last-child td {
     
     .top-bar-actions .icon-btn:not(:last-child) {
         display: none;
+    }
+}
+
+@media (max-width: 780px) {
+    .website-summary-section {
+        display: block;
+    }
+    
+    .website-summary-grid {
+        grid-template-columns: 1fr;
     }
 }
 

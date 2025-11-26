@@ -154,6 +154,26 @@ class BumpaApp {
         this.updateStats();
         this.updateMetrics();
         this.updateSalesDisplay();
+        this.updateWebsiteSummary();
+    }
+    
+    updateWebsiteSummary() {
+        const viewsElement = document.getElementById('website-views');
+        const statusElement = document.getElementById('website-status');
+        const linkElement = document.getElementById('website-link');
+        
+        if (viewsElement) {
+            viewsElement.textContent = '2,340';
+        }
+        
+        if (statusElement) {
+            statusElement.textContent = 'Online';
+            statusElement.classList.add('website-status-online');
+        }
+        
+        if (linkElement) {
+            linkElement.textContent = this.settings.storeDomain;
+        }
     }
     
     updateMetrics() {
