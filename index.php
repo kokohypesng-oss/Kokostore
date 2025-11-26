@@ -272,28 +272,28 @@
                         <aside class="widget widget_block">
                             <h5 class="widget-title">Official Info</h5>
                             <div class="wp-widget-group__inner-blocks">
-                                <ol class="list_none inf_list">
-                                    <li>
+                                <div class="inf_list">
+                                    <div class="inf_item">
                                         <a href="#">
-                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-map-marker-alt"></i> <span>22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
+                                            <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
                                         </a>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="inf_item">
                                         <a href="#">
-                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-map-marker-alt"></i> <span>Abule Otun Junction, Owode-Mowe <br>Motor Road, Owode Egba Ogun State.</span>
+                                            <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">Abule Otun Junction, Owode-Mowe <br>Motor Road, Owode Egba Ogun State.</span>
                                         </a>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="inf_item">
                                         <a href="#">
-                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-phone-alt"></i> <span>+2348107016971</span>
+                                            <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">+2348107016971</span>
                                         </a>
-                                    </li>
-                                    <li>
+                                    </div>
+                                    <div class="inf_item">
                                         <a href="#">
-                                            <i aria-hidden="true" class="text-primary wf-mr-2 fas fa-phone-alt"></i><span>odunayodamilola1995@gmail.com</span>
+                                            <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">odunayodamilola1995@gmail.com</span>
                                         </a>
-                                    </li>
-                                </ol>
+                                    </div>
+                                </div>
                             </div>
                         </aside>
                     </div>
