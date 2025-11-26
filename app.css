@@ -1189,7 +1189,7 @@ tr:last-child td {
 
 .banner-image {
     width: 100%;
-    height: 0;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
