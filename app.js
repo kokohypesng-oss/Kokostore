@@ -398,10 +398,7 @@ class BumpaApp {
     }
     
     updateMobileHeader() {
-        const headerName = document.getElementById('mobile-header-name');
-        if (headerName) {
-            headerName.textContent = this.settings.businessName || 'Kokostore';
-        }
+        // Keep the default mobile header name from HTML as-is
     }
     
     saveSettings() {
