@@ -1277,6 +1277,7 @@ tr:last-child td {
     align-items: center;
     text-align: center;
     transition: all 0.3s ease;
+    opacity: 0.25;
 }
 
 .metric-box:nth-child(1) {
