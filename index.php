@@ -315,7 +315,7 @@
                                 <h1 class="page-title">Products</h1>
                                 <p class="page-subtitle">Manage your product catalog and inventory</p>
                             </div>
-                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="padding: 0.75rem 2rem; font-weight: 600;">+ Add Product</button>
+                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="padding: 0.300rem 1.3rem; font-weight: 600;">+ Add Product</button>
                         </div>
                         
                         <!-- Tab Navigation -->
@@ -345,10 +345,10 @@
                             
                             <!-- Stock Status Filter Tabs -->
                             <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white; padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: none; cursor: pointer;">All Products</button>
-                                <button class="filter-tab" data-filter="in-stock" onclick="app.filterByStock('in-stock')" style="background: transparent; color: var(--gray-700); padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">In Stock</button>
-                                <button class="filter-tab" data-filter="low-stock" onclick="app.filterByStock('low-stock')" style="background: transparent; color: var(--gray-700); padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Low Stock</button>
-                                <button class="filter-tab" data-filter="out-of-stock" onclick="app.filterByStock('out-of-stock')" style="background: transparent; color: var(--gray-700); padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Out of Stock</button>
+                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white; padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: none; cursor: pointer;">All Products</button>
+                                <button class="filter-tab" data-filter="in-stock" onclick="app.filterByStock('in-stock')" style="background: transparent; color: var(--gray-700); padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">In Stock</button>
+                                <button class="filter-tab" data-filter="low-stock" onclick="app.filterByStock('low-stock')" style="background: transparent; color: var(--gray-700); padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Low Stock</button>
+                                <button class="filter-tab" data-filter="out-of-stock" onclick="app.filterByStock('out-of-stock')" style="background: transparent; color: var(--gray-700); padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Out of Stock</button>
                             </div>
                             
                             <!-- Products Content -->
@@ -360,7 +360,7 @@
                         <!-- Collections Tab Content -->
                         <div id="collections-tab-content" style="display: none;">
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
-                                <button class="btn btn-primary" onclick="app.openModal('add-collection-modal')" style="padding: 0.75rem 2rem; font-weight: 600;">+ Add Collection</button>
+                                <button class="btn btn-primary" onclick="app.openModal('add-collection-modal')" style="padding: 0.300rem 1.3rem; font-weight: 600;">+ Add Collection</button>
                             </div>
                             
                             <div id="collections-content" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; min-height: 400px;">
