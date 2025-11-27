@@ -308,7 +308,6 @@
                             <div class="team-column">
                                 <div class="founder-card">
                                     <img src="attached_assets/stock_images/professional_busines_6164952e.jpg" alt="Founder" class="founder-photo">
-                                    <p class="founder-title">Organisation founder and MD</p>
                                 </div>
                             </div>
                         </div>
