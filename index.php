@@ -277,6 +277,11 @@
                                     <div class="inf_list">
                                         <div class="inf_item">
                                             <a href="#">
+                                                <i aria-hidden="true" class="inf_icon fas fa-user"></i><span class="inf_text">Adeyanju ADEOYE</span>
+                                            </a>
+                                        </div>
+                                        <div class="inf_item">
+                                            <a href="#">
                                                 <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
                                             </a>
                                         </div>
@@ -297,7 +302,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h3 class="founder-name">Adeyanju ADEOYE</h3>
                             </aside>
 
                             <!-- Right Column: Founder Passport -->
