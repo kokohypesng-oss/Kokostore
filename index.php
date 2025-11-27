@@ -282,11 +282,6 @@
                                         </div>
                                         <div class="inf_item">
                                             <a href="#">
-                                                <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">22A Lafaru Street, Ijeun Tuntun,<br> Abeokuta, Ogun State.</span>
-                                            </a>
-                                        </div>
-                                        <div class="inf_item">
-                                            <a href="#">
                                                 <i aria-hidden="true" class="inf_icon fas fa-map-marker-alt"></i><span class="inf_text">Abule Otun Junction, Owode-Mowe <br>Motor Road, Owode Egba Ogun State.</span>
                                             </a>
                                         </div>
