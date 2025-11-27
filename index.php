@@ -118,7 +118,7 @@
                     <!-- Home Page -->
                     <div id="home-page" class="page-content">
                         <!-- Page Title and Subtitle (Above Banner) -->
-                        <div class="page-header" style="margin-bottom: 0;">
+                        <div class="page-header" style="display: none;">
                             <h1 class="page-title">Dashboard</h1>
                             <p class="page-subtitle">Welcome back! Here's your business performance overview.</p>
                         </div>
@@ -372,7 +372,7 @@
                     
                     <!-- Orders Page -->
                     <div id="orders-page" class="page-content hidden">
-                        <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div class="page-header" style="display: none;">
                             <div>
                                 <h1 class="page-title">Orders</h1>
                                 <p class="page-subtitle">Track and manage all your customer orders</p>
@@ -403,7 +403,7 @@
                     
                     <!-- Customers Page -->
                     <div id="customers-page" class="page-content hidden">
-                        <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div class="page-header" style="display: none;">
                             <div>
                                 <h1 class="page-title">Customers</h1>
                                 <p class="page-subtitle">Manage customer relationships and data</p>
@@ -433,7 +433,7 @@
                     
                     <!-- Analytics Page -->
                     <div id="analytics-page" class="page-content hidden">
-                        <div class="page-header">
+                        <div class="page-header" style="display: none;">
                             <h1 class="page-title">Analytics</h1>
                             <p class="page-subtitle">Business insights and performance metrics</p>
                         </div>
@@ -495,7 +495,7 @@
                     
                     <!-- Settings Page -->
                     <div id="settings-page" class="page-content hidden">
-                        <div class="page-header">
+                        <div class="page-header" style="display: none;">
                             <h1 class="page-title">Settings</h1>
                             <p class="page-subtitle">Manage your account and business preferences</p>
                         </div>
@@ -575,7 +575,7 @@
                 
                 <!-- More Page -->
                 <div id="more-page" class="page-content hidden">
-                    <div class="page-header">
+                    <div class="page-header" style="display: none;">
                         <h1 class="page-title">More</h1>
                         <p class="page-subtitle">Additional tools and features</p>
                     </div>

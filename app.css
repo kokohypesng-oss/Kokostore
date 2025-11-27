@@ -591,7 +591,7 @@ td {
     color: var(--gray-900);
     font-size: 0.700rem;
     white-space: nowrap;
-    width: 100
+    width: 100%;
 }
 
 tr:last-child td {
@@ -1684,8 +1684,7 @@ tr:last-child td {
 }
 
 @media (max-width: 480px) {
-    .table-container {
-        width: 100%;
+    .table-container { 
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         margin: 30px 0 0;
@@ -1697,7 +1696,7 @@ tr:last-child td {
     
     table {
         font-size: 0.60rem;
-        min-width: 100%;
+        min-width: 500px;
     }
     
     th {
@@ -1712,6 +1711,8 @@ tr:last-child td {
         font-size: 0.55rem;
         white-space: nowrap;
     }
+
+}
     
     /* Hide Actions column on mobile */
     table th:last-child,
@@ -1960,70 +1961,4 @@ tr:last-child td {
 
 .hidden {
     display: none !important;
-}
-/* Bumpa-style Tab Navigation */
-.bumpa-tab-container {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    background: var(--light-green);
-    padding: 0.35rem;
-    border-radius: 50px;
-    width: fit-content;
-}
-
-.products-tab {
-    padding: 0.5rem 1.25rem;
-    border: none;
-    background: transparent;
-    color: var(--gray-700);
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    font-size: 0.875rem;
-}
-
-.products-tab.active {
-    background: white;
-    color: var(--store-primary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.products-tab:hover {
-    color: var(--store-primary);
-}
-
-/* Add Product/Collection Green Circular Button */
-.btn-add-product {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--store-primary);
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-}
-
-.btn-add-product:hover {
-    background: var(--store-dark);
-    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
-    transform: scale(1.05);
-}
-
-/* Filter All Button */
-.btn-filter-all {
-    border: 2px solid var(--store-primary) !important;
-    background: transparent !important;
-    color: var(--store-primary) !important;
-}
-
-.btn-filter-all:hover {
-    background: var(--light-green) !important;
 }
