@@ -315,7 +315,7 @@
                                 <h1 class="page-title">Products</h1>
                                 <p class="page-subtitle">Manage your product catalog and inventory</p>
                             </div>
-                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')">+ Add Product</button>
+                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="padding: 0.75rem 2rem; font-weight: 600;">+ Add Product</button>
                         </div>
                         
                         <!-- Tab Navigation -->
@@ -336,19 +336,19 @@
                                     <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--gray-400);">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                                     </svg>
-                                    <input type="text" id="product-search" placeholder="Search products..." onkeyup="app.searchProducts()" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem;">
+                                    <input type="text" id="product-search" placeholder="Search products..." onkeyup="app.searchProducts()" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500;">
                                 </div>
-                                <select id="category-filter" onchange="app.filterByCategory()" style="padding: 0.75rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem;">
+                                <select id="category-filter" onchange="app.filterByCategory()" style="padding: 0.75rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500;">
                                     <option value="">All Categories</option>
                                 </select>
                             </div>
                             
                             <!-- Stock Status Filter Tabs -->
                             <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white;">All Products</button>
-                                <button class="filter-tab" data-filter="in-stock" onclick="app.filterByStock('in-stock')" style="background: transparent; color: var(--gray-700);">In Stock</button>
-                                <button class="filter-tab" data-filter="low-stock" onclick="app.filterByStock('low-stock')" style="background: transparent; color: var(--gray-700);">Low Stock</button>
-                                <button class="filter-tab" data-filter="out-of-stock" onclick="app.filterByStock('out-of-stock')" style="background: transparent; color: var(--gray-700);">Out of Stock</button>
+                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white; padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: none; cursor: pointer;">All Products</button>
+                                <button class="filter-tab" data-filter="in-stock" onclick="app.filterByStock('in-stock')" style="background: transparent; color: var(--gray-700); padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">In Stock</button>
+                                <button class="filter-tab" data-filter="low-stock" onclick="app.filterByStock('low-stock')" style="background: transparent; color: var(--gray-700); padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Low Stock</button>
+                                <button class="filter-tab" data-filter="out-of-stock" onclick="app.filterByStock('out-of-stock')" style="background: transparent; color: var(--gray-700); padding: 0.5rem 1rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Out of Stock</button>
                             </div>
                             
                             <!-- Products Content -->
@@ -360,7 +360,7 @@
                         <!-- Collections Tab Content -->
                         <div id="collections-tab-content" style="display: none;">
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
-                                <button class="btn btn-primary" onclick="app.openModal('add-collection-modal')">+ Add Collection</button>
+                                <button class="btn btn-primary" onclick="app.openModal('add-collection-modal')" style="padding: 0.75rem 2rem; font-weight: 600;">+ Add Collection</button>
                             </div>
                             
                             <div id="collections-content" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; min-height: 400px;">
