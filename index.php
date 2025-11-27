@@ -315,11 +315,11 @@
                                 <h1 class="page-title">Products</h1>
                                 <p class="page-subtitle">Manage your product catalog and inventory</p>
                             </div>
-                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="padding: 0.300rem 1.3rem; font-weight: 600;">+ Add Product</button>
+                            <button class="btn-add-product" onclick="app.openModal('add-product-modal')"><i class="fas fa-plus"></i></button>
                         </div>
                         
                         <!-- Tab Navigation -->
-                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem;">
+                        <div class="bumpa-tab-container">
                             <button class="products-tab active" data-tab="products" onclick="app.switchProductTab('products')">
                                 Products (<span id="products-count">0</span>)
                             </button>
@@ -338,7 +338,8 @@
                                     </svg>
                                     <input type="text" id="product-search" placeholder="Search products..." onkeyup="app.searchProducts()" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500;">
                                 </div>
-                                <select id="category-filter" onchange="app.filterByCategory()" style="padding: 0.75rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500;">
+                                <button class="btn-filter-all" id="category-filter-btn" onclick="document.getElementById('category-filter').click()" style="border: 2px solid var(--store-primary); background: transparent; color: var(--store-primary); padding: 0.5rem 1rem; border-radius: 50px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-filter"></i>All</button>
+                                <select id="category-filter" onchange="app.filterByCategory()" style="display: none;">
                                     <option value="">All Categories</option>
                                 </select>
                             </div>
@@ -360,7 +361,7 @@
                         <!-- Collections Tab Content -->
                         <div id="collections-tab-content" style="display: none;">
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
-                                <button class="btn btn-primary" onclick="app.openModal('add-collection-modal')" style="padding: 0.300rem 1.3rem; font-weight: 600;">+ Add Collection</button>
+                                <button class="btn-add-product" onclick="app.openModal('add-collection-modal')"><i class="fas fa-plus"></i></button>
                             </div>
                             
                             <div id="collections-content" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; min-height: 400px;">
