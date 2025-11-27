@@ -241,13 +241,13 @@ class BumpaApp {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Category</th>
-                                    <th>Cost</th>
-                                    <th>Price</th>
-                                    <th>Stock</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
+                                    <th data-abbr="Prod">Product</th>
+                                    <th data-abbr="Cat">Category</th>
+                                    <th data-abbr="Cost">Cost</th>
+                                    <th data-abbr="PR">Price</th>
+                                    <th data-abbr="Stk">Stock</th>
+                                    <th data-abbr="Stat">Status</th>
+                                    <th data-abbr="Act">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -327,13 +327,13 @@ class BumpaApp {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Category</th>
-                                    <th>Cost</th>
-                                    <th>Price</th>
-                                    <th>Stock</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
+                                    <th data-abbr="Prod">Product</th>
+                                    <th data-abbr="Cat">Category</th>
+                                    <th data-abbr="Cost">Cost</th>
+                                    <th data-abbr="PR">Price</th>
+                                    <th data-abbr="Stk">Stock</th>
+                                    <th data-abbr="Stat">Status</th>
+                                    <th data-abbr="Act">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>

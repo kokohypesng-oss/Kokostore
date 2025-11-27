@@ -1945,3 +1945,15 @@ tr:last-child td {
 .hidden {
     display: none !important;
 }
+
+/* Mobile Table Header Abbreviations */
+@media (max-width: 780px) {
+    table thead th {
+        font-size: 0;
+    }
+    
+    table thead th::before {
+        content: attr(data-abbr);
+        font-size: 0.700rem;
+    }
+}
