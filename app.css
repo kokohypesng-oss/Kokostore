@@ -1892,6 +1892,27 @@ tr:last-child td {
     font-size: 0.770rem;
 }
 
+.founder-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.founder-name-text {
+    font-size: 0.770rem;
+    font-weight: 500;
+    color: var(--gray-800);
+}
+
+.founder-subtitle {
+    font-size: 0.500rem;
+    color: var(--gray-600);
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
 /* Founder Card */
 .founder-card {
     background: transparent;
