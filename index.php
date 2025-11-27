@@ -338,7 +338,8 @@
                                     </svg>
                                     <input type="text" id="product-search" placeholder="Search products..." onkeyup="app.searchProducts()" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 500;">
                                 </div>
-                                <button class="btn-filter-all" id="category-filter-btn" onclick="document.getElementById('category-filter').click()" style="border: 2px solid var(--store-primary); background: transparent; color: var(--store-primary); padding: 0.5rem 1rem; border-radius: 50px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-filter"></i>All</button>
+                                <button class="btn-filter-all" id="category-filter-btn" onclick="document.getElementById('category-filter').click()" style="border: 2px solid var(--store-primary); background: transparent; color: var(--store-primary); padding: 0.5rem 0.75rem; border-radius: 50px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-filter"></i></button>
+                                <button class="btn-add-product" onclick="app.openModal('add-product-modal')" style="padding: 0.5rem 0.75rem; border-radius: 50px; border: none; background: var(--store-primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="fas fa-plus"></i></button>
                                 <select id="category-filter" onchange="app.filterByCategory()" style="display: none;">
                                     <option value="">All Categories</option>
                                 </select>
