@@ -345,7 +345,7 @@
                             
                             <!-- Stock Status Filter Tabs -->
                             <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white; padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: none; cursor: pointer;">All Products</button>
+                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white; padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: none; cursor: pointer;">All</button>
                                 <button class="filter-tab" data-filter="in-stock" onclick="app.filterByStock('in-stock')" style="background: transparent; color: var(--gray-700); padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">In Stock</button>
                                 <button class="filter-tab" data-filter="low-stock" onclick="app.filterByStock('low-stock')" style="background: transparent; color: var(--gray-700); padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Low Stock</button>
                                 <button class="filter-tab" data-filter="out-of-stock" onclick="app.filterByStock('out-of-stock')" style="background: transparent; color: var(--gray-700); padding: 0.300rem 1.3rem; font-weight: 600; border-radius: 0.5rem; border: 1px solid var(--gray-300); cursor: pointer;">Out of Stock</button>
