@@ -576,7 +576,7 @@ thead {
 
 th {
     text-align: left;
-    padding: 0.3rem 0.5rem;
+    padding: 0.3rem 0.3rem;
     font-weight: 600;
     color: var(--gray-700);
     font-size: 0.700rem;
@@ -586,7 +586,7 @@ th {
 }
 
 td {
-    padding: 0.35rem 0.5rem;
+    padding: 0.3rem 0.3rem;
     border-bottom: 1px solid var(--gray-200);
     color: var(--gray-900);
     font-size: 0.700rem;
@@ -1655,14 +1655,14 @@ tr:last-child td {
     }
     
     th {
-        padding: 0.75rem 1rem;
+        padding: 0.3rem 0.3rem;
         font-size: 0.700rem;
         background: var(--gray-50);
         gap: 0.5rem;
     }
     
     td {
-        padding: 0.75rem 1rem;
+        padding: 0.3rem 0.3rem;
         font-size: 0.7008rem;
         gap: 0.5rem;
     }
@@ -1700,14 +1700,14 @@ tr:last-child td {
     }
     
     th {
-        padding: 0.2rem 0.8rem;
+        padding: 0.3rem 0.3rem;
         font-size: 0.65rem;
         font-weight: 500;
         background: var(--gray-50);
     }
     
     td {
-        padding: 0.2rem 0.8rem;
+        padding: 0.3rem 0.3rem;
         font-size: 0.55rem;
         white-space: nowrap;
     }
