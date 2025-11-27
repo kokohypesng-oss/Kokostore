@@ -310,7 +310,7 @@
                     
                     <!-- Products Page -->
                     <div id="products-page" class="page-content hidden">
-                        <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="page-header" style="display: none;">
                             <div>
                                 <h1 class="page-title">Products</h1>
                                 <p class="page-subtitle">Manage your product catalog and inventory</p>
