@@ -456,7 +456,7 @@ class BumpaApp {
                 <td>₦${parseFloat(order.total).toLocaleString()}</td>
                 <td><span class="badge-pill ${order.status === 'completed' ? 'badge-success' : order.status === 'pending' ? 'badge-warning' : 'badge-danger'}">${order.status}</span></td>
                 <td>
-                    <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.viewOrder(${index})">View</button>
+                    <button class="btn btn-secondary" style="padding: 0.3rem 0.5rem; font-size: 0.40rem;" onclick="app.viewOrder(${index})">View</button>
                 </td>
             </tr>
         `).join('');
