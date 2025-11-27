@@ -287,12 +287,12 @@
                                         </div>
                                         <div class="inf_item">
                                             <a href="#">
-                                                <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">+2348107016971</span>
+                                                <i aria-hidden="true" class="inf_icon fas fa-phone-alt"></i><span class="inf_text">+2348129440095</span>
                                             </a>
                                         </div>
                                         <div class="inf_item">
                                             <a href="#">
-                                                <i aria-hidden="true" class="inf_icon fas fa-envelope"></i><span class="inf_text">odunayodamilola1995@gmail.com</span>
+                                                <i aria-hidden="true" class="inf_icon fas fa-envelope"></i><span class="inf_text">kokohypesng@gmail.com</span>
                                             </a>
                                         </div>
                                     </div>
