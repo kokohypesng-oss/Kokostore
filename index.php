@@ -310,46 +310,62 @@
                     
                     <!-- Products Page -->
                     <div id="products-page" class="page-content hidden">
+                        <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <h1 class="page-title">Products</h1>
+                                <p class="page-subtitle">Manage your product catalog and inventory</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')">+ Add Product</button>
+                        </div>
+                        
                         <!-- Tab Navigation -->
                         <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem;">
-                            <button class="products-tab active" data-tab="products" onclick="this.classList.add('active'); document.querySelector('[data-tab=collections]').classList.remove('active');">
-                                Products
+                            <button class="products-tab active" data-tab="products" onclick="app.switchProductTab('products')">
+                                Products (<span id="products-count">0</span>)
                             </button>
-                            <button class="products-tab" data-tab="collections" onclick="this.classList.add('active'); document.querySelector('[data-tab=products]').classList.remove('active');">
+                            <button class="products-tab" data-tab="collections" onclick="app.switchProductTab('collections')">
                                 Collections
                             </button>
                         </div>
                         
-                        <!-- Search and Actions Bar -->
-                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center;">
-                            <div style="flex: 1; position: relative;">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--gray-400);">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                                </svg>
-                                <input type="text" placeholder="Search products..." style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem;">
+                        <!-- Products Tab Content -->
+                        <div id="products-tab-content" style="display: block;">
+                            <!-- Search and Filter Bar -->
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center; flex-wrap: wrap;">
+                                <div style="flex: 1; position: relative; min-width: 250px;">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--gray-400);">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                    </svg>
+                                    <input type="text" id="product-search" placeholder="Search products..." onkeyup="app.searchProducts()" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem;">
+                                </div>
+                                <select id="category-filter" onchange="app.filterByCategory()" style="padding: 0.75rem; border: 1px solid var(--gray-300); border-radius: 0.5rem; font-size: 0.875rem;">
+                                    <option value="">All Categories</option>
+                                </select>
                             </div>
-                            <button class="icon-btn" title="Help" style="width: 40px; height: 40px; border: 1px solid var(--gray-300); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </button>
-                            <button class="btn btn-primary" onclick="app.openModal('add-product-modal')" style="width: 40px; height: 40px; padding: 0; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
-                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/>
-                                </svg>
-                            </button>
+                            
+                            <!-- Stock Status Filter Tabs -->
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <button class="filter-tab active" data-filter="all" onclick="app.filterByStock('all')" style="background: var(--store-primary); color: white;">All Products</button>
+                                <button class="filter-tab" data-filter="in-stock" onclick="app.filterByStock('in-stock')" style="background: transparent; color: var(--gray-700);">In Stock</button>
+                                <button class="filter-tab" data-filter="low-stock" onclick="app.filterByStock('low-stock')" style="background: transparent; color: var(--gray-700);">Low Stock</button>
+                                <button class="filter-tab" data-filter="out-of-stock" onclick="app.filterByStock('out-of-stock')" style="background: transparent; color: var(--gray-700);">Out of Stock</button>
+                            </div>
+                            
+                            <!-- Products Content -->
+                            <div id="products-content" style="min-height: 400px;">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
                         </div>
                         
-                        <!-- Filter Tabs -->
-                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                            <button class="filter-tab active" data-filter="all" style="background: var(--store-primary); color: white;">All</button>
-                            <button class="filter-tab" data-filter="published" style="background: transparent; color: var(--gray-700);">Published</button>
-                            <button class="filter-tab" data-filter="unpublished" style="background: transparent; color: var(--gray-700);">Unpublished</button>
-                        </div>
-                        
-                        <!-- Products Content -->
-                        <div id="products-content" style="min-height: 400px;">
-                            <!-- Will be populated by JavaScript or show empty state -->
+                        <!-- Collections Tab Content -->
+                        <div id="collections-tab-content" style="display: none;">
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
+                                <button class="btn btn-primary" onclick="app.openModal('add-collection-modal')">+ Add Collection</button>
+                            </div>
+                            
+                            <div id="collections-content" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; min-height: 400px;">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
                         </div>
                     </div>
                     
@@ -737,8 +753,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Category</label>
-                        <select name="category" class="form-select">
+                        <label class="form-label">Category *</label>
+                        <select name="category" class="form-select" required>
                             <option value="">Select category</option>
                             <option value="Clothing">Clothing</option>
                             <option value="Footwear">Footwear</option>
@@ -747,8 +763,23 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label class="form-label">Cost Price (₦)</label>
+                        <input type="number" name="costPrice" class="form-input" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Min. Order Quantity</label>
+                        <input type="number" name="moq" class="form-input" value="1" placeholder="1">
+                    </div>
+                    <div class="form-group">
                         <label class="form-label">Description</label>
                         <textarea name="description" class="form-textarea" placeholder="Product description..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Publish Status *</label>
+                        <select name="published" class="form-select" required>
+                            <option value="true">Published</option>
+                            <option value="false">Unpublished</option>
+                        </select>
                     </div>
                     <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
                         <button type="button" class="btn btn-secondary close-modal">Cancel</button>
@@ -787,6 +818,32 @@
                     <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
                         <button type="button" class="btn btn-secondary close-modal">Cancel</button>
                         <button type="submit" class="btn btn-primary">Create Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Collection Modal -->
+    <div id="add-collection-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Collection</h3>
+                <button class="close-btn close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="app.addCollection(event)">
+                    <div class="form-group">
+                        <label class="form-label">Collection Name *</label>
+                        <input type="text" name="name" class="form-input" required placeholder="e.g., Summer Collection">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea name="description" class="form-textarea" placeholder="Collection description..."></textarea>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+                        <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Collection</button>
                     </div>
                 </form>
             </div>

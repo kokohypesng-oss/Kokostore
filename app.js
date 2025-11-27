@@ -219,6 +219,9 @@ class BumpaApp {
         const container = document.getElementById('products-content');
         if (!container) return;
         
+        document.getElementById('products-count').textContent = this.products.length;
+        this.updateCategoryFilter();
+        
         if (this.products.length === 0) {
             container.innerHTML = `
                 <div class="products-empty-state">
@@ -239,7 +242,8 @@ class BumpaApp {
                             <thead>
                                 <tr>
                                     <th>Product</th>
-                                    <th>SKU</th>
+                                    <th>Category</th>
+                                    <th>Cost</th>
                                     <th>Price</th>
                                     <th>Stock</th>
                                     <th>Status</th>
@@ -251,19 +255,23 @@ class BumpaApp {
                                     <tr>
                                         <td>
                                             <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                                <div class="product-image-card" style="width: 48px; height: 48px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden;">
-                                                    ${product.image ? `<img src="${product.image}" style="width: 100%; height: 100%; object-fit: cover;">` : '📦'}
+                                                <div class="product-image-card" style="width: 40px; height: 40px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                                    📦
                                                 </div>
-                                                <strong>${product.name}</strong>
+                                                <div>
+                                                    <strong>${product.name}</strong><br>
+                                                    <small style="color: var(--gray-500);">${product.sku || 'No SKU'}</small>
+                                                </div>
                                             </div>
                                         </td>
-                                        <td>${product.sku || '-'}</td>
-                                        <td>₦${parseFloat(product.price).toLocaleString()}</td>
+                                        <td>${product.category || '-'}</td>
+                                        <td>₦${product.costPrice ? parseFloat(product.costPrice).toLocaleString() : '-'}</td>
+                                        <td><strong>₦${parseFloat(product.price).toLocaleString()}</strong></td>
                                         <td>${product.stock || 0}</td>
                                         <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
                                         <td>
                                             <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
-                                            <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: var(--red);" onclick="app.deleteProduct(${index})">Delete</button>
+                                            <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: #ef4444;" onclick="app.deleteProduct(${index})">Delete</button>
                                         </td>
                                     </tr>
                                 `).join('')}
@@ -274,6 +282,149 @@ class BumpaApp {
             </div>
         `;
         container.innerHTML = table;
+    }
+    
+    editProduct(index) {
+        alert('Edit feature coming soon! Product: ' + this.products[index].name);
+    }
+    
+    searchProducts() {
+        const search = document.getElementById('product-search').value.toLowerCase();
+        const filtered = this.products.filter(p => p.name.toLowerCase().includes(search) || (p.sku && p.sku.toLowerCase().includes(search)));
+        this.displayFilteredProducts(filtered);
+    }
+    
+    filterByCategory() {
+        const category = document.getElementById('category-filter').value;
+        const filtered = category ? this.products.filter(p => p.category === category) : this.products;
+        this.displayFilteredProducts(filtered);
+    }
+    
+    filterByStock(status) {
+        let filtered = this.products;
+        if (status === 'in-stock') filtered = this.products.filter(p => p.stock > 10);
+        else if (status === 'low-stock') filtered = this.products.filter(p => p.stock <= 10 && p.stock > 0);
+        else if (status === 'out-of-stock') filtered = this.products.filter(p => p.stock === 0);
+        
+        document.querySelectorAll('.filter-tab').forEach(btn => btn.style.background = btn.dataset.filter === status || (btn.dataset.filter === 'all' && status === 'all') ? 'var(--store-primary)' : 'transparent');
+        document.querySelectorAll('.filter-tab').forEach(btn => btn.style.color = btn.dataset.filter === status || (btn.dataset.filter === 'all' && status === 'all') ? 'white' : 'var(--gray-700)');
+        this.displayFilteredProducts(filtered);
+    }
+    
+    displayFilteredProducts(products) {
+        const container = document.getElementById('products-content');
+        if (!container) return;
+        
+        if (products.length === 0) {
+            container.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--gray-500);">No products found</div>';
+            return;
+        }
+        
+        const table = `
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Category</th>
+                                    <th>Cost</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${products.map((product, idx) => {
+                                    const index = this.products.indexOf(product);
+                                    return `
+                                        <tr>
+                                            <td>
+                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                    <div class="product-image-card" style="width: 40px; height: 40px; background: var(--gray-100); border-radius: 0.5rem; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                                                        📦
+                                                    </div>
+                                                    <div>
+                                                        <strong>${product.name}</strong><br>
+                                                        <small style="color: var(--gray-500);">${product.sku || 'No SKU'}</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>${product.category || '-'}</td>
+                                            <td>₦${product.costPrice ? parseFloat(product.costPrice).toLocaleString() : '-'}</td>
+                                            <td><strong>₦${parseFloat(product.price).toLocaleString()}</strong></td>
+                                            <td>${product.stock || 0}</td>
+                                            <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
+                                            <td>
+                                                <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
+                                                <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: #ef4444;" onclick="app.deleteProduct(${index})">Delete</button>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML = table;
+    }
+    
+    switchProductTab(tab) {
+        document.getElementById('products-tab-content').style.display = tab === 'products' ? 'block' : 'none';
+        document.getElementById('collections-tab-content').style.display = tab === 'collections' ? 'block' : 'none';
+        document.querySelectorAll('.products-tab').forEach(btn => btn.classList.toggle('active'));
+        if (tab === 'collections') this.renderCollectionsPage();
+    }
+    
+    updateCategoryFilter() {
+        const select = document.getElementById('category-filter');
+        if (!select) return;
+        const categories = [...new Set(this.products.filter(p => p.category).map(p => p.category))];
+        const currentValue = select.value;
+        select.innerHTML = '<option value="">All Categories</option>' + categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+        select.value = currentValue;
+    }
+    
+    renderCollectionsPage() {
+        const container = document.getElementById('collections-content');
+        if (!container) return;
+        const collections = this.settings.collections || [];
+        if (collections.length === 0) {
+            container.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--gray-500); grid-column: 1/-1;">No collections yet. Create your first collection!</div>';
+            return;
+        }
+        container.innerHTML = collections.map((col, i) => `
+            <div class="card">
+                <div class="card-body">
+                    <h3>${col.name}</h3>
+                    <p style="color: var(--gray-600); margin: 0.5rem 0 1rem 0;">${col.description || 'No description'}</p>
+                    <button class="btn btn-secondary" style="width: 100%; padding: 0.5rem;" onclick="app.editCollection(${i})">Edit</button>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    addCollection(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        if (!this.settings.collections) this.settings.collections = [];
+        this.settings.collections.push({
+            name: formData.get('name'),
+            description: formData.get('description')
+        });
+        localStorage.setItem('settings', JSON.stringify(this.settings));
+        form.reset();
+        this.closeAllModals();
+        this.renderCollectionsPage();
+    }
+    
+    editCollection(index) {
+        alert('Edit collection feature coming soon!');
     }
     
     renderOrdersPage() {
@@ -567,11 +718,14 @@ class BumpaApp {
         
         const product = {
             name: formData.get('name'),
-            sku: formData.get('sku'),
+            sku: formData.get('sku') || '',
+            costPrice: formData.get('costPrice') || 0,
             price: formData.get('price'),
             stock: formData.get('stock'),
+            moq: formData.get('moq') || 1,
             category: formData.get('category'),
-            description: formData.get('description')
+            description: formData.get('description'),
+            published: formData.get('published') === 'true'
         };
         
         this.products.push(product);
