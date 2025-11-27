@@ -277,7 +277,7 @@
                                     <div class="inf_list">
                                         <div class="inf_item">
                                             <a href="#">
-                                                <i aria-hidden="true" class="inf_icon fas fa-user"></i><span class="inf_text">Adeyanju ADEOYE</span>
+                                                <i aria-hidden="true" class="inf_icon fas fa-user"></i><span class="inf_text">Adeyanju ADEOYE<br>The organisation founder and MD</span>
                                             </a>
                                         </div>
                                         <div class="inf_item">
