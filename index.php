@@ -270,7 +270,7 @@
                         
                         <!-- 5. Official Info & Team Section -->
                         <div class="info-team-container">
-                            <!-- Left Column: Official Info -->
+                            <!-- Left Column: Official Info & Founder Name -->
                             <aside class="widget widget_block info-column">
                                 <h5 class="widget-title"><span class="title-underline">Official</span> Info</h5>
                                 <div class="wp-widget-group__inner-blocks">
@@ -297,13 +297,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <h3 class="founder-name">Adeyanju ADEOYE</h3>
                             </aside>
 
                             <!-- Right Column: Founder Passport -->
                             <div class="team-column">
                                 <div class="founder-card">
                                     <img src="attached_assets/stock_images/professional_busines_6164952e.jpg" alt="Founder" class="founder-photo">
-                                    <h3 class="founder-name">Adeyanju ADEOYE</h3>
                                     <p class="founder-title">Organisation founder and MD</p>
                                 </div>
                             </div>

@@ -1731,8 +1731,8 @@ tr:last-child td {
     /* Mobile: About Author Section */
     .info-team-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 1.5rem;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
 
     .info-column {
@@ -1788,11 +1788,10 @@ tr:last-child td {
 .info-team-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
+    gap: 0.550rem;
+    margin-bottom: 1rem;
     width: 100%;
     height: auto;
-    align-items: stretch;
 }
 
 .info-column {
@@ -1821,6 +1820,15 @@ tr:last-child td {
     box-shadow: none !important;
 }
 
+.info-column .founder-name {
+    font-size: 0.775rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin: 0;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
 .team-column {
     grid-column: 2;
     display: flex;
@@ -1830,17 +1838,15 @@ tr:last-child td {
 }
 
 .widget {
-    background: white;
-    border: 1px solid var(--gray-200);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
+    background: transparent;
+    border: none;
 }
 
 .widget-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 800;
     color: var(--gray-900);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.5px;
 }
 
@@ -1854,7 +1860,7 @@ tr:last-child td {
 .inf_list {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .inf_item {
@@ -1899,13 +1905,14 @@ tr:last-child td {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
 .founder-photo {
-    width: 100%;
+    width: 150px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     border: 2px solid var(--store-primary);
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
