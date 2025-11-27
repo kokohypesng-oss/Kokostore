@@ -268,10 +268,10 @@ class BumpaApp {
                                         <td>₦${product.costPrice ? parseFloat(product.costPrice).toLocaleString() : '-'}</td>
                                         <td><strong>₦${parseFloat(product.price).toLocaleString()}</strong></td>
                                         <td>${product.stock || 0}</td>
-                                        <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
+                                        <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}" style="padding: 0.2rem 0rem;">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
                                         <td>
-                                            <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
-                                            <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: #ef4444;" onclick="app.deleteProduct(${index})">Delete</button>
+                                            <button class="btn btn-secondary" style="padding: 0.375rem 0.25rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
+                                            <button class="btn btn-outline" style="padding: 0.375rem 0.25rem; font-size: 0.75rem; color: #ef4444;" onclick="app.deleteProduct(${index})">Delete</button>
                                         </td>
                                     </tr>
                                 `).join('')}
@@ -356,10 +356,10 @@ class BumpaApp {
                                             <td>₦${product.costPrice ? parseFloat(product.costPrice).toLocaleString() : '-'}</td>
                                             <td><strong>₦${parseFloat(product.price).toLocaleString()}</strong></td>
                                             <td>${product.stock || 0}</td>
-                                            <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
+                                            <td><span class="badge-pill ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}" style="padding: 0.2rem 0rem;">${product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'}</span></td>
                                             <td>
-                                                <button class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
-                                                <button class="btn btn-outline" style="padding: 0.375rem 0.75rem; font-size: 0.75rem; color: #ef4444;" onclick="app.deleteProduct(${index})">Delete</button>
+                                                <button class="btn btn-secondary" style="padding: 0.375rem 0.25rem; font-size: 0.75rem;" onclick="app.editProduct(${index})">Edit</button>
+                                                <button class="btn btn-outline" style="padding: 0.375rem 0.25rem; font-size: 0.75rem; color: #ef4444;" onclick="app.deleteProduct(${index})">Delete</button>
                                             </td>
                                         </tr>
                                     `;
