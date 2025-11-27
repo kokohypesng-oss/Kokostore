@@ -1888,6 +1888,10 @@ tr:last-child td {
     font-weight: 500;
 }
 
+.inf_item:first-child .inf_text {
+    font-size: 0.770rem;
+}
+
 /* Founder Card */
 .founder-card {
     background: transparent;
@@ -1914,21 +1918,6 @@ tr:last-child td {
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
 }
 
-.founder-name {
-    font-size: 0.775rem;
-    font-weight: 800;
-    color: var(--gray-900);
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
-.founder-title {
-    font-size: 0.550rem;
-    color: var(--store-primary);
-    margin: 0;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
 
 .hidden {
     display: none !important;
